@@ -1,0 +1,66 @@
+/* Removing stuff! ------------- */
+
+/* Menu */
+#menu-links,
+#menu-tools,
+#menu-appearance a[href="theme-editor.php"],
+#menu-appearance a[href="themes.php?page=custom-background"],
+#menu-plugins a[href="plugin-editor.php"],
+#menu-settings a[href="options-permalink.php"],
+#menu-settings a[href="options-privacy.php"] {
+  display: none;
+}
+
+
+/* Dashboard */
+#screen-options-wrap label[for="dashboard_plugins-hide"],
+#screen-options-wrap label[for="dashboard_quick_press-hide"],
+#screen-options-wrap label[for="dashboard_primary-hide"],
+#screen-options-wrap label[for="dashboard_secondary-hide"],
+#dashboard_plugins,
+#dashboard_quick_press,
+#dashboard_primary,
+#dashboard_secondary {
+  display: none;
+}
+
+
+/* Category list screen */
+body.edit-tags-php tr.description,
+table.tag thead #description,
+table.tag td.description,
+table.tag tfoot th.column-description,
+#addtag .tag-description,
+#screen-options-wrap label[for="description-hide"] {
+  display: none;
+}
+
+
+/* Post write screen */
+#screen-options-wrap label[for="postexcerpt-hide"],
+#screen-options-wrap label[for="trackbacksdiv-hide"],
+#screen-options-wrap label[for="postcustom-hide"],
+#screen-options-wrap label[for="commentsdiv-hide"],
+#screen-options-wrap label[for="slugdiv-hide"],
+#screen-options-wrap label[for="revisionsdiv-hide"],
+#edit-slug-box a[href="#"],
+#preview-action,
+#postcustom,
+#postexcerpt,
+#trackbacksdiv,
+#commentsdiv,
+#slugdiv,
+#revisionsdiv {
+  display: none;
+}
+
+
+/* Settings */
+body.options-media-php .upload_url_path,
+body.options-reading-php tr.blog_charset,
+body.options-general-php tr.blogdescription,
+body.options-general-php tr.home,
+body.options-general-php tr.siteurl,
+.form-table .posts_per_page {
+  display: none;
+}

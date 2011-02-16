@@ -1,0 +1,141 @@
+/*
+  WYSIWYG & POST TYPOGRAPHY ----------------------
+  Add the class wysiwyg to the parent element 
+  containing the wysiwyg output.
+  
+  TODO: Apply this stylesheet to TinyMCE.
+*/
+
+.wysiwyg * {
+  font: 14px/22px georgia, serif;
+}
+
+.wysiwyg div,
+.wysiwyg p,
+.wysiwyg ul,
+.wysiwyg ol,
+.wysiwyg blockquote,
+.wysiwyg code {
+  margin-bottom: 2em;
+}
+
+.wysiwyg ul,
+.wysiwyg ol {
+  list-style-position: outside;
+  border-bottom: 1px dotted #525966;
+  border-top: 1px dotted #525966;
+  margin: 2em 0;
+  padding: 1.5em 25px 1.5em 50px;
+}
+
+.wysiwyg ol {
+  list-style: decimal;
+}
+
+.wysiwyg ul {
+  list-style: circle;
+}
+
+.wysiwyg ul li,
+.wysiwyg ol li {
+  margin-top: 0.3em;
+}
+
+.wysiwyg ul li:first-child,
+.wysiwyg ol li:first-child {
+  margin-top: 0;
+}
+
+.wysiwyg b,
+.wysiwyg strong {
+  font-weight: bold;
+}
+
+.wysiwyg i,
+.wysiwyg em {
+  font-style: italic;
+}
+
+.wysiwyg code {
+  font-family: 'Courier New', Courier, monospace;
+  padding: 20px;
+  background: #525966;
+  display: block;
+  font-weight: bold;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+}
+
+.wysiwyg blockquote {
+  border-bottom: 0.071em dotted #525966;
+  border-top: 0.071em dotted #525966;
+  margin: 2em 0;
+  padding: 1.5em 25px;
+  color: #2B2E37;
+}
+
+.wysiwyg blockquote p {
+  margin: 0;
+}
+
+.wysiwyg img,
+.wysiwyg video,
+.wysiwyg param,
+.wysiwyg object,
+.wysiwyg embed {
+  max-width: 95% !important;
+}
+
+.wysiwyg img {
+  height: auto;  /* If image is resized, this ensures the height is adjusted in all browsers as well. */
+  border: 5px solid #16191C;
+}
+
+.wysiwyg img.wp-smiley {
+  border: 0 transparent;
+}
+
+.wysiwyg h1,
+.wysiwyg h2,
+.wysiwyg h3,
+.wysiwyg h4,
+.wysiwyg h5,
+.wysiwyg h6 {
+  font-size: 2em;
+  margin-bottom: 0.3em;
+  line-height: 1em;
+  font-family: 'Yanone Kaffeesatz', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+.wysiwyg h2 {
+  font-size: 1.8em;
+}
+
+.wysiwyg h3 {
+  font-size: 1.6em;
+}
+
+.wysiwyg h4 {
+  font-size: 1.4em;
+}
+
+.wysiwyg h5 {
+  font-size: 1.2em;
+}
+
+.wysiwyg h6 {
+  font-size: 1em;
+}
+
+.wysiwyg .alignleft {
+  float: left;
+  clear: left;
+  margin: 0 5px 5px 0;
+}
+
+.wysiwyg .alignright {
+  float: right;
+  clear: right;
+  margin: 0 5px 0 5px;
+}

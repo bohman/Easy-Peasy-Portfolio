@@ -1,0 +1,404 @@
+/*
+Theme Name: Easy Peasy Portfolio
+Theme URI: http://linusbohman.se
+Author URI: http://linusbohman.se
+Description: A great looking portfolio theme that streamlines your backend. Y'know, so you can focus on creating more awesome work rather than tinkering with a bunch of options you don't need.
+Version: 0.5
+Author: Linus Bohman
+
+
+COLOR SCHEME:
+-------------
+Sand blue: #677079 (background)
+High contrast dark: #16191C (body text)
+High contrast light: #FFF (links and other interaction areas)
+Secondary items: #3E444E (extrathings)
+Low contrast blue: #525966 (background and discrete links)
+-------------
+
+Going for a pretty monochrome thing. The colour scheme is under development. Yay!
+
+*/
+
+@import url('css/reset.css');
+@import url('css/wysiwyg.css');
+@import url('css/reusables.css');
+@import url('css/colorbox.css');
+
+
+/* GLOBAL THEME STYLING ---------------- */
+body {
+  background: #677079 url('img/noise.png') repeat-x;
+  font: 14px/22px georgia, serif;
+  color: #16191C;
+}
+
+a {
+  color: #FFF;
+  text-decoration: none;
+}
+a:hover {
+  color: #DDD;
+}
+input[type="submit"]:active,
+button:active,
+a:active {
+  color: #DDD;
+  outline: 0;
+  position: relative;
+  top: 1px;
+}
+
+input[type="text"],
+textarea {
+  border: 0;
+  padding: 7px;
+  width: 97%;
+  font: 14px/22px georgia, serif;
+  color: #16191C;
+  background: #525966;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+input[type="submit"],
+button,
+.button {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  border: 0 transparent;
+  background: #16191C;
+  color: #677079;
+  cursor: pointer;
+  padding: 7px;
+  line-height: 1em;
+  font: 14px georgia, serif;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+input[type="submit"]:hover,
+button:hover,
+.button:hover {
+  background: #2A3038;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.2em;
+}
+
+.center {
+  width: 840px;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.posts.center {
+  width: 880px;
+  padding: 0;
+}
+
+.nav {
+  overflow: hidden;
+  padding: 0 20px;
+  margin-bottom: 60px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.nav ul {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+}
+
+.nav li {
+  overflow: hidden;
+  float: left;
+}
+
+.nav a {
+  float: left;
+  display: block;
+  margin-left: 30px;
+  font-family: 'Yanone Kaffeesatz', 'Helvetica', 'Arial', sans-serif;
+  font-size: 20px;
+  padding: 5px 0;
+  letter-spacing: 0.7px;
+}
+.nav #sitename a {
+  margin-left: 0;
+}
+
+
+/* FOOTER ---------------------- */
+#footer {
+  padding: 60px 20px 40px;
+  overflow: hidden;
+}
+
+#footer .column {
+  float: left;
+  margin-left: 40px;
+  width: 253px;
+}
+
+#footer .column:first-child {
+  margin-left: 0;
+}
+
+.widget {
+  margin-top: 40px;
+}
+
+.widget ul,
+.widget ol {
+  border: 0;
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+.widget:first-child {
+  margin-top: 0;
+}
+
+
+/* FULL POST ----------------------
+.body - main content */
+.body {
+  overflow: hidden;
+  float: left;
+  width: 418px;
+  margin: 0 84px 0 40px;
+  clear: left;
+}
+
+/* In case someone use the full post in list view (like removes home.php)
+   this makes a list of full posts easier to read. */
+.posts .post .polaroid {
+  margin-top: 60px;
+}
+.posts .post:first-child .polaroid {
+  margin-top: 0;
+}
+
+/* .aside - secondary content */
+.aside { 
+  float: left;
+  width: 258px;
+  margin: 0 40px;
+}
+
+.aside .section {
+  margin-top: 30px;
+  color: #3E444E;
+  clear: left;
+  overflow: hidden;
+}
+.aside .section:first-child {
+  margin-top: 0;
+}
+
+.aside .gallery li {
+  float: left;
+  margin: 0 0 5px 5px;
+}
+
+.aside .gallery a {
+  display: block;
+  height: 75px;
+  width: 75px;
+  border: #16191C solid 3px;
+  overflow: hidden;
+}
+
+.aside .section.credit {
+  list-style: none;
+  padding: 20px;
+  border: 0;
+  background: #525966;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  overflow: hidden;
+}
+
+.aside .section.credit li {
+  float: left;
+  margin-left: 10px;
+}
+.aside .section.credit li:first-child {
+  margin-left: 0;
+}
+
+/* Comments - what it sounds like */
+.comments {
+  clear: left;
+  overflow: hidden;
+}
+
+.comments .header {
+  margin: 32px 0 0 40px;
+}
+
+/* Comments reply form */
+.comments .form-section {
+  margin-top: 0.7em;
+}
+
+.comments input[type="text"],
+.comments textarea {
+  width: 248px;
+}
+.comments input[type="submit"] {
+  width: 262px;
+}
+
+.comments textarea {
+  height: 100px;
+}
+
+/* Comment threads */
+#trackbacks-list,
+#comments-list,
+.pingback,
+.comment {
+  overflow: hidden;
+  margin-top: 60px;
+}
+#trackbacks-list:first-child,
+#comments-list:first-child,
+.pingback:first-child,
+.comment:first-child {
+  margin-top: 0;
+}
+
+#trackbacks-list .comment-content * {
+  font-style: italic !important;
+}
+
+.comment-author img {
+  float: right;
+  border: 3px solid #16191C;
+  margin: 0 0 5px 0;
+}
+
+.comments .wysiwyg p {
+  margin: 2em 0 0 0; /* TODO: not keen on this. WYSIWYG styles should work out of the box. Fix! */
+}
+.comments .wysiwyg p:first-child {
+  margin: 0; /* TODO: See above. */
+}
+
+.comment .children li {
+  margin: 60px 0 0 0;
+  padding: 0 0 0 30px;
+  background: url('img/icon-reply20x20.png') left 3px no-repeat;
+}
+
+
+/* ARCHIVE ---------------------- */
+.cat-nav {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.cat-nav li {
+  float: left;
+  margin-right: 10px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.cat-nav li:hover,
+.cat-nav .current-cat {
+  background: #525966;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.cat-nav a {
+  color: #3E444E;
+}
+
+.cat-nav li:hover a,
+.cat-nav .current-cat a {
+  color: #16191C;
+}
+
+li.archive {
+  float: left;
+  height: 295px;
+  width: 293px;
+  text-align: center;
+}
+
+li.archive .polaroid {
+  padding: 20px 20px 20px;
+  margin: 0 !important;
+  float: none;
+}
+
+li.archive .polaroid .image {
+  height: 240px;
+  width: 240px;
+}
+
+li.archive .polaroid img.featured-image {
+  max-height: 240px;
+  max-width: 240px;
+  height: auto;
+  width: auto;
+  display: none;
+}
+body.no-js li.archive .polaroid img.featured-image {
+  display: inline;
+}
+
+li.archive .polaroid .pseudo-image {
+  line-height: 1em;
+  height: 240px;
+  width: 240px;
+  font-size: 130px;
+  letter-spacing: -10px;
+}
+
+
+/* HOME ---------------------- 
+TODO: consider this pretty temporary until you fixed the front page */
+.push-link {
+  overflow: hidden;
+  margin-top: -2em;
+}
+.push-link a {
+  float: right;
+  font-size: 20px !important;
+  letter-spacing: 0.7px;
+  font-family: 'Yanone Kaffeesatz';
+  margin-right: 20px;
+}
+
+#presentation {
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+#presentation .wysiwyg,
+#presentation .header {
+  width: 500px;
+}
+
+#presentation .polaroid {
+  float: right;
+  margin-left: 40px;
+  padding: 20px;
+  margin-bottom: 0;
+}
+
+#presentation .polaroid img {
+  max-width: 240px;
+}

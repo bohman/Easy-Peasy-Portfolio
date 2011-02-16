@@ -1,0 +1,108 @@
+/* REUSABLES ---------------------- */
+.pseudo-image {
+  background: #333;
+  color: #222;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 800px;
+  height: 270px;
+  font-size: 400px;
+  letter-spacing: -40px;
+  text-indent: -100px;
+}
+
+.header,
+.header a {
+  font-size: 42px !important;
+  margin-bottom: 0.3em !important;
+  line-height: 1em !important;
+  font-family: 'Yanone Kaffeesatz', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+.sub-header,
+.sub-header a {
+  font-size: 25px !important;
+  margin-bottom: 0.3em !important;
+  line-height: 1em !important;
+  font-family: 'Yanone Kaffeesatz', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.post-edit-link, /* TODO: add .utility-info to all post edit links with filter and remove this */
+.utility-info,
+.utility-info a,
+a.utility-info {
+  color: #525966;
+}
+.post-edit-link:hover, /* TODO: add .utility-info to all post edit links with filter and remove this */
+.utility-info a:hover,
+a.utility-info:hover {
+  color: #3E444E;
+}
+
+/* Polaroids */
+.polaroid {
+  *display: inline; /* To make IE7 recognize inline-block on block level elements */
+  display: inline-block;
+  background: #fff url('img/back-polaroid.png') repeat;
+  padding: 40px;
+  position: relative;
+  box-shadow: 2px 2px 6px #222;
+  -moz-box-shadow: 2px 2px 6px #222;
+  -webkit-box-shadow: 2px 2px 6px #222;
+  margin-bottom: 40px;
+  float: left;
+}
+
+.polaroid .caption {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  background: #000;
+  padding: 20px;
+  margin: 20px 20px 20px 0;
+  width: 202px;
+  font-family: 'Yanone Kaffeesatz', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 30px;
+  display: none;
+  opacity: 0.8;
+}
+.no-js .polaroid:hover .caption {
+  display: block;
+}
+
+.polaroid .caption a {
+  color: #fff;
+}
+.polaroid .caption a:hover {
+  text-decoration: none;
+}
+.polaroid .caption a:visited {
+  color: #bbb;
+}
+
+.polaroid img {
+  max-width: 800px;
+  display: block;
+}
+
+.polaroid .image {
+  background: #000;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid #000;
+  display: block;
+  text-decoration: none;
+}
+
+.polaroid .preloader {
+  top: 50%;
+  position: relative;
+  margin-top: -16px;
+  display: inline;
+}
