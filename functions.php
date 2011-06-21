@@ -4,7 +4,14 @@
   // Javascripts
   //---------------------------------
 
-  function epp_load_scripts() {
+  function epp_add_css() {
+    if(!is_admin()) {
+      wp_enqueue_style('epp', get_bloginfo('stylesheet_url'), false, 'screen');
+      wp_enqueue_style('fonts-yanone', 'http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold', false, 'screen');
+    }
+  }
+
+  function epp_enqueue_scripts() {
     if(!is_admin()) {
       wp_enqueue_script('utilities', get_bloginfo('template_directory') . '/js/epp.js', array('jquery'));
       wp_enqueue_script('easyrotation', get_bloginfo('template_directory') . '/js/easyrotate.js', array('jquery'));
@@ -13,7 +20,8 @@
     }
   }
 
-  add_action('init', 'epp_load_scripts');
+  add_action('wp_print_styles', 'epp_add_css');
+  add_action('wp_enqueue_scripts', 'epp_enqueue_scripts');
 
 
   //---------------------------------
