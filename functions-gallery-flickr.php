@@ -33,14 +33,14 @@ if (!empty($flickrsetid) && !empty($flickrapikey)) {
     $decoded = json_decode($ch_data, true);
 
     echo('<ul class="flickr-php gallery section">');
-    foreach($decoded[photoset][photo] as $photo) {
-      $squaresize = $photo[url_sq];
-      $thumbnailsize = $photo[url_t];
-      $smallsize = $photo[url_s];
-      $mediumsize = $photo[url_m];
-      $originalsize = $photo[url_o];
-      $photoURL = 'http://www.flickr.com/photos/'. $decoded[photoset][owner] .'/'. $photo[id];
-      $phototitle = $photo[title]; ?>
+    foreach($decoded['photoset']['photo'] as $photo) {
+      $squaresize = $photo['url_sq'];
+      $thumbnailsize = $photo['url_t'];
+      $smallsize = $photo['url_s'];
+      $mediumsize = $photo['url_m'];
+      $originalsize = $photo['url_o'];
+      $photoURL = 'http://www.flickr.com/photos/'. $decoded['photoset']['owner'] .'/'. $photo['id'];
+      $phototitle = $photo['title']; ?>
 
       <li>
         <a rel="gallery-<?php the_id(); ?>" title="<?php echo $phototitle; ?>" href="<?php echo $originalsize; ?>">
