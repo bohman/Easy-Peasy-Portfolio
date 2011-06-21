@@ -6,19 +6,75 @@
   TODO: Apply this stylesheet to TinyMCE.
 */
 
+
+
+
+
+
+
+/*
+  WYSIWYG & POST TYPOGRAPHY ----------------------
+  Add the class wysiwyg to the parent element 
+  containing the wysiwyg output.
+*/
+
 .wysiwyg * {
   font: 14px/22px georgia, serif;
 }
 
+/* Spacing between elements */
+.wysiwyg h1,
+.wysiwyg h2,
+.wysiwyg h3,
+.wysiwyg h4,
+.wysiwyg h5,
+.wysiwyg h6,
 .wysiwyg div,
 .wysiwyg p,
 .wysiwyg ul,
 .wysiwyg ol,
-.wysiwyg blockquote,
-.wysiwyg code {
-  margin-bottom: 2em;
+.wysiwyg blockquote {
+  margin-top: 2em;
+}
+.wysiwyg h1 + p,
+.wysiwyg h2 + p,
+.wysiwyg h3 + p,
+.wysiwyg h4 + p,
+.wysiwyg h5 + p,
+.wysiwyg h6 + p,
+.wysiwyg h1 + div,
+.wysiwyg h2 + div,
+.wysiwyg h3 + div,
+.wysiwyg h4 + div,
+.wysiwyg h5 + div,
+.wysiwyg h6 + div,
+.wysiwyg h1 + ul,
+.wysiwyg h2 + ul,
+.wysiwyg h3 + ul,
+.wysiwyg h4 + ul,
+.wysiwyg h5 + ul,
+.wysiwyg h6 + ul,
+.wysiwyg h1 + ol,
+.wysiwyg h2 + ol,
+.wysiwyg h3 + ol,
+.wysiwyg h4 + ol,
+.wysiwyg h5 + ol,
+.wysiwyg h6 + ol,
+.wysiwyg h1:first-child,
+.wysiwyg h2:first-child,
+.wysiwyg h3:first-child,
+.wysiwyg h4:first-child,
+.wysiwyg h5:first-child,
+.wysiwyg h6:first-child,
+.wysiwyg div:first-child,
+.wysiwyg p:first-child,
+.wysiwyg ul:first-child,
+.wysiwyg ol:first-child,
+.wysiwyg blockquote:first-child {
+  margin-top: 0;
 }
 
+/* Lists */
 .wysiwyg ul,
 .wysiwyg ol {
   list-style-position: outside;
@@ -40,62 +96,12 @@
 .wysiwyg ol li {
   margin-top: 0.3em;
 }
-
 .wysiwyg ul li:first-child,
 .wysiwyg ol li:first-child {
   margin-top: 0;
 }
 
-.wysiwyg b,
-.wysiwyg strong {
-  font-weight: bold;
-}
-
-.wysiwyg i,
-.wysiwyg em {
-  font-style: italic;
-}
-
-.wysiwyg code {
-  font-family: 'Courier New', Courier, monospace;
-  padding: 20px;
-  background: #525966;
-  display: block;
-  font-weight: bold;
-  border-radius: 20px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-}
-
-.wysiwyg blockquote {
-  border-bottom: 0.071em dotted #525966;
-  border-top: 0.071em dotted #525966;
-  margin: 2em 0;
-  padding: 1.5em 25px;
-  color: #2B2E37;
-}
-
-.wysiwyg blockquote p {
-  margin: 0;
-}
-
-.wysiwyg img,
-.wysiwyg video,
-.wysiwyg param,
-.wysiwyg object,
-.wysiwyg embed {
-  max-width: 95% !important;
-}
-
-.wysiwyg img {
-  height: auto;  /* If image is resized, this ensures the height is adjusted in all browsers as well. */
-  border: 5px solid #16191C;
-}
-
-.wysiwyg img.wp-smiley {
-  border: 0 transparent;
-}
-
+/* Headers */
 .wysiwyg h1,
 .wysiwyg h2,
 .wysiwyg h3,
@@ -126,6 +132,55 @@
 
 .wysiwyg h6 {
   font-size: 1em;
+}
+
+/* Quotes, bolds, italics and other emphasis */
+.wysiwyg b,
+.wysiwyg strong {
+  font-weight: bold;
+}
+
+.wysiwyg i,
+.wysiwyg em {
+  font-style: italic;
+}
+
+.wysiwyg blockquote {
+  border-bottom: 0.071em dotted #525966;
+  border-top: 0.071em dotted #525966;
+  margin: 2em 0;
+  padding: 1.5em 25px;
+  color: #2B2E37;
+}
+
+.wysiwyg code {
+  font-family: 'Courier New', Courier, monospace;
+  padding: 20px;
+  background: #525966;
+  display: block;
+  font-weight: bold;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+}
+
+/* Media */
+.wysiwyg img,
+.wysiwyg video,
+.wysiwyg param,
+.wysiwyg object,
+.wysiwyg embed {
+  max-width: 95%; /* Media shouldn't break the layout */
+}
+
+.wysiwyg img {
+  height: auto;  /* If image is resized, this ensures the height is adjusted in all browsers as well. */
+  border: 5px solid #16191C;
+}
+
+/* WordPress specific classes */
+.wysiwyg img.wp-smiley {
+  border: 0 transparent;
 }
 
 .wysiwyg .alignleft {
