@@ -1,7 +1,7 @@
 <?php
 
   //---------------------------------
-  // Javascripts
+  // Javascripts & CSS
   //---------------------------------
 
   function epp_add_css() {
@@ -60,7 +60,6 @@
   //---------------------------------
 
   define('HEADER_TEXTCOLOR', '');
-  define('HEADER_IMAGE', '%s/img/header/linusbohman.png');
   define('NO_HEADER_TEXT', true);
   define('HEADER_IMAGE_WIDTH', apply_filters('epp_header_image_width', 243));
   define('HEADER_IMAGE_HEIGHT', apply_filters('epp_header_image_height', 100));

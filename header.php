@@ -17,12 +17,15 @@
     <?php } ?>
 
       <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
-        <span class="hidden"><?php bloginfo('name'); ?></span>
-        <img 
-          src="<?php header_image(); ?>"
-          width="<?php echo HEADER_IMAGE_WIDTH; ?>"
-          height="<?php echo HEADER_IMAGE_HEIGHT; ?>"
-          alt="<?php bloginfo('name'); ?>" />
+        <?php if(get_header_image()) { ?>
+          <img 
+            src="<?php header_image(); ?>"
+            width="<?php echo HEADER_IMAGE_WIDTH; ?>"
+            height="<?php echo HEADER_IMAGE_HEIGHT; ?>"
+            alt="<?php bloginfo('name'); ?>" />
+        <?php } else {
+          bloginfo('name');
+        } ?>
       </a>
 
     <?php if(is_singular() || is_archive()) { ?>
