@@ -9,7 +9,7 @@
   <ul id="footer-middle" class="column">
     <?php if(is_active_sidebar('middle-footer')) {
       dynamic_sidebar('Middle footer');
-    } else { 
+    } else {
       echo('<li>&nbsp;</li>');
     } ?>
   </ul>
