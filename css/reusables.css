@@ -13,6 +13,42 @@
   text-indent: -100px;
 }
 
+/* Action links */
+.cat-nav a,
+.nav .menu a,
+.action-link {
+  font-family: 'Yanone Kaffeesatz', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.7px;
+  padding: 0.5em 1.3em;
+  border: 1px solid #525966;
+  box-shadow: 0 1px 1px #778194;
+  color: #3E444E;
+  -webkit-border-radius: 25px; /* Saf3-4, iOS 1-3.2, Android <1.6 */
+  -moz-border-radius: 25px; /* FF1-3.6 */
+  border-radius: 25px; /* Opera 10.5, IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
+  background: rgba(82, 89, 102, 0.3);
+  display: inline-block;
+}
+
+.cat-nav a:hover,
+.nav .menu a:hover,
+.action-link:hover {
+  color: #3E444E;
+  background: rgb(82, 89, 102);
+  background: rgba(82, 89, 102, 0.7);
+}
+
+.cat-nav .current-cat a,
+.nav .menu .current-post-ancestor a,
+.nav .menu .current-category-ancestor a,
+.nav .menu .current-menu-item a,
+.action-link.active {
+  color: #fff;
+  background: rgba(82, 89, 102, 0.7);
+}
+
+/* Titles */
 .header,
 .header a {
   font-size: 42px !important;
@@ -29,6 +65,7 @@
   font-family: 'Yanone Kaffeesatz', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
+/* General utility classes */
 .hidden {
   display: none;
 }

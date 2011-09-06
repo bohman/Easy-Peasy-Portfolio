@@ -24,7 +24,7 @@ $epp_options = get_option('epp_theme_options'); ?>
 
         <?php if ($epp_options['frontlinkurl']) { ?>
           <p class="push-link">
-            <a href="<?php echo $epp_options['frontlinkurl']; ?>" class="learn-more">
+            <a href="<?php echo $epp_options['frontlinkurl']; ?>" class="action-link">
               <?php if ($epp_options['frontlinktext']) { 
                 echo $epp_options['frontlinktext'];
               } else {

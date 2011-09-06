@@ -3,7 +3,7 @@ Theme Name: Easy Peasy Portfolio
 Theme URI: http://linusbohman.se
 Author URI: http://linusbohman.se
 Description: A great looking portfolio theme that streamlines your backend. Y'know, so you can focus on creating more awesome work rather than tinkering with a bunch of options you don't need.
-Version: 0.5
+Version: 0.6
 Author: Linus Bohman
 
 
@@ -123,11 +123,7 @@ label {
 .nav a {
   float: left;
   display: block;
-  margin-left: 30px;
-  font-family: 'Yanone Kaffeesatz', 'Helvetica', 'Arial', sans-serif;
-  font-size: 20px;
-  padding: 5px 0;
-  letter-spacing: 0.7px;
+  margin-left: 10px;
 }
 .nav #sitename a {
   margin-left: 0;
@@ -309,25 +305,6 @@ label {
 .cat-nav li {
   float: left;
   margin-right: 10px;
-  padding: 10px;
-  font-weight: bold;
-}
-
-.cat-nav li:hover,
-.cat-nav .current-cat {
-  background: #525966;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-}
-
-.cat-nav a {
-  color: #3E444E;
-}
-
-.cat-nav li:hover a,
-.cat-nav .current-cat a {
-  color: #16191C;
 }
 
 li.archive {
@@ -372,14 +349,7 @@ li.archive .polaroid .pseudo-image {
 TODO: consider this pretty temporary until you fixed the front page */
 .push-link {
   overflow: hidden;
-  margin-top: -2em;
-}
-.push-link a {
-  float: right;
-  font-size: 20px !important;
-  letter-spacing: 0.7px;
-  font-family: 'Yanone Kaffeesatz';
-  margin-right: 20px;
+  margin-top: 1em !important;
 }
 
 #presentation {

@@ -46,8 +46,8 @@ jQuery(document).ready(function() {
   jQuery('body.js .archive .polaroid .image:has(img)').prepend('<img class="preloader" src="/wp-content/themes/easypeasyportfolio/img/preloader.gif" />');
   jQuery('body.js .archive .polaroid .image .featured-image').hide().load(function(){
     jQuery(this).each(function() {
-      w = jQuery(this).width();
-      h = jQuery(this).height();
+      var w = jQuery(this).width();
+      var h = jQuery(this).height();
       if (w > h) {
         jQuery(this).css({
           'position' : 'relative',
@@ -74,13 +74,13 @@ jQuery(document).ready(function() {
   // http://plugins.jquery.com/project/easy-element-rotation
   //---------------------------------
 
-  function randomXtoY(minVal,maxVal,floatVal) {
+  function randomXtoY(minVal, maxVal, floatVal) {
     var randVal = minVal+(Math.random()*(maxVal-minVal));
-    return typeof floatVal=='undefined'?Math.round(randVal):randVal.toFixed(floatVal);
+    return typeof floatVal == 'undefined' ? Math.round(randVal) : randVal.toFixed(floatVal);
   }
 
   jQuery('body.js .archive .polaroid, body.js #presentation .polaroid .image').each(function(){
-    degree = randomXtoY(-0.8,0.8)
+    var degree = randomXtoY(-0.8,0.8)
     jQuery(this).parent().easyRotate({
       'degrees' : degree
     });
@@ -131,5 +131,6 @@ jQuery(document).ready(function() {
     }
   });
   jQuery('body.js #respond #commentform label').remove();
+
 
 });

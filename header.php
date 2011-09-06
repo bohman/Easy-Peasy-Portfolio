@@ -18,7 +18,7 @@
 
       <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
         <?php if(get_header_image()) { ?>
-          <img 
+          <img
             src="<?php header_image(); ?>"
             width="<?php echo HEADER_IMAGE_WIDTH; ?>"
             height="<?php echo HEADER_IMAGE_HEIGHT; ?>"
@@ -32,10 +32,9 @@
       </div>
     <?php } else { ?>
       </h1>
-    <?php } ?>
+    <?php }
 
-
-    <?php wp_nav_menu( array(
+    wp_nav_menu( array(
       'theme_location' => 'header-menu',
       'container' => '',
       'fallback_cb' => '',
