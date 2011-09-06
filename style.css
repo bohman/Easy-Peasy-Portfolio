@@ -26,7 +26,7 @@ Going for a pretty monochrome thing. The colour scheme is under development. Yay
 @import url('css/colorbox.css');
 
 
-/* GLOBAL THEME STYLING ---------------- */
+/* GENERAL THEME STYLING ---------------- */
 body {
   background: #677079 url('img/noise.png') repeat-x;
   font: 14px/22px georgia, serif;
@@ -51,38 +51,15 @@ a:active {
 
 input[type="text"],
 textarea {
-  border: 0;
-  padding: 7px;
+  border: 1px solid #525966;
+  background: rgba(82, 89, 102, 0.3);
+  padding: 10px;
   width: 97%;
   font: 14px/22px georgia, serif;
-  color: #16191C;
-  background: #525966;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-}
-
-input[type="submit"],
-button,
-.button {
-  display: block;
-  text-align: center;
-  font-weight: bold;
-  border: 0 transparent;
-  background: #16191C;
-  color: #677079;
-  cursor: pointer;
-  padding: 7px;
-  line-height: 1em;
-  font: 14px georgia, serif;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-}
-input[type="submit"]:hover,
-button:hover,
-.button:hover {
-  background: #2A3038;
+  color: #2E333A;
+  border-radius: 1px;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
 }
 
 label {
@@ -181,7 +158,7 @@ label {
   margin-top: 0;
 }
 
-/* .aside - secondary content */
+/* .aside - secondary content, not the new WP-aside */
 .aside { 
   float: left;
   width: 258px;
@@ -247,7 +224,7 @@ label {
 
 .comments input[type="text"],
 .comments textarea {
-  width: 248px;
+  width: 240px;
 }
 .comments input[type="submit"] {
   width: 262px;
