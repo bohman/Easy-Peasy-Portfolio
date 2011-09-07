@@ -60,6 +60,9 @@ textarea {
   border-radius: 1px;
   -moz-border-radius: 1px;
   -webkit-border-radius: 1px;
+  -moz-box-shadow: inset 0px 2px 5px #424C54;
+  -webkit-box-shadow: inset 0px 2px 5px #424C54;
+  box-shadow: inset 0px 2px 5px #424C54;
 }
 
 label {
