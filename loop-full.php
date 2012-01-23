@@ -9,11 +9,11 @@
 
     <div class="wysiwyg body">
       <?php if(is_singular()) { ?>
-        <h1 class="header"><?php the_title(); ?><?php edit_post_link('edit', ' ', '')?></h1>
+        <h1 class="header"><?php the_title(); edit_post_link('edit', ' ', ''); ?></h1>
       <?php } else { ?>
         <h2 class="header"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><?php edit_post_link('edit', ' ', '')?></h2>
-      <?php } ?>
-      <?php the_content(); ?>
+      <?php }
+      the_content(); ?>
     </div>
 
     <div class="aside">
