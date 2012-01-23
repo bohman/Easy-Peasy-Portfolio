@@ -20,7 +20,7 @@ $flickrapikey = $epp_options['flickrapikey'];
 
 if (!empty($flickrsetid) && !empty($flickrapikey)) {
 
-  $query = 'http://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&extras=url_sq,url_t,url_s,url_m,url_o&api_key='. $flickrapikey .'&photoset_id='. $flickrsetid .'&format=json&nojsoncallback=1';
+  $query = 'http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&photoset_id='. $flickrsetid .'&api_key='. $flickrapikey .'&format=json&nojsoncallback=1&extras=url_sq,url_t,url_s,url_m,url_o';
 
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $query);
@@ -32,24 +32,26 @@ if (!empty($flickrsetid) && !empty($flickrapikey)) {
   if(!empty($ch_data)) {
     $decoded = json_decode($ch_data, true);
 
-    echo('<ul class="flickr-php gallery section">');
-    foreach($decoded['photoset']['photo'] as $photo) {
-      $squaresize = $photo['url_sq'];
-      $thumbnailsize = $photo['url_t'];
-      $smallsize = $photo['url_s'];
-      $mediumsize = $photo['url_m'];
-      $originalsize = $photo['url_o'];
-      $photoURL = 'http://www.flickr.com/photos/'. $decoded['photoset']['owner'] .'/'. $photo['id'];
-      $phototitle = $photo['title']; ?>
+    if(!$decoded['stat'] == 'fail') {
+      echo('<ul class="flickr-php gallery section">');
+      foreach($decoded['photoset']['photo'] as $photo) {
+        $squaresize = $photo['url_sq'];
+        $thumbnailsize = $photo['url_t'];
+        $smallsize = $photo['url_s'];
+        $mediumsize = $photo['url_m'];
+        $originalsize = $photo['url_o'];
+        $photoURL = 'http://www.flickr.com/photos/'. $decoded['photoset']['owner'] .'/'. $photo['id'];
+        $phototitle = $photo['title']; ?>
 
-      <li>
-        <a rel="gallery-<?php the_id(); ?>" title="<?php echo $phototitle; ?>" href="<?php echo $originalsize; ?>">
-          <img alt="<?php echo $phototitle; ?>" src="<?php echo $squaresize; ?>" />
-        </a>
-      </li>
+        <li>
+          <a rel="gallery-<?php the_id(); ?>" title="<?php echo $phototitle; ?>" href="<?php echo $originalsize; ?>">
+            <img alt="<?php echo $phototitle; ?>" src="<?php echo $squaresize; ?>" />
+          </a>
+        </li>
 
-    <?php }
-    echo('</ul>');
+      <?php }
+      echo('</ul>');
+    }
 
 
   // Javascript fallback if cURL isn't installed or otherwise returned nothing.
