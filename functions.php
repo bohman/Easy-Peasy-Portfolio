@@ -245,17 +245,7 @@
           <?php echo $extrathings; ?>
         </div>
       <?php }
-      if (function_exists('the_flattr_permalink') || function_exists('tweetbutton')) { ?>
-        <ul class="credit section">
-          <?php if (function_exists('the_flattr_permalink')) { ?>
-            <li><?php the_flattr_permalink(); ?></li>
-          <?php }
-          if (function_exists('tweetbutton')) { ?>
-            <li><?php echo tweetbutton(null, true, 'vertical'); ?></li>
-          <?php } ?>
-        </ul>
-      <?php } ?>
-    <?php }
+    }
   }
 
 
