@@ -269,10 +269,14 @@ label {
 }
 
 li.archive {
-  float: left;
-  height: 295px;
-  width: 293px;
+  display: inline-block;
   text-align: center;
+  margin-right: 14px;
+  margin-bottom: 14px;
+}
+
+li.archive:nth-child(3n+3) {
+  margin-right: 0;
 }
 
 li.archive .polaroid {
@@ -291,7 +295,9 @@ li.archive .polaroid img.featured-image {
   height: auto;
   width: auto;
   display: none;
+  vertical-align: top;
 }
+
 body.no-js li.archive .polaroid img.featured-image {
   display: inline;
 }

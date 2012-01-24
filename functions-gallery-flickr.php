@@ -11,6 +11,8 @@
 // This should work, but I have not yet tested this on a server without working cURL,
 // so that's a small liability. The JS works fine, I'm just not 100% it triggers - it depends
 // on what happens when there is no cURL.
+//
+// TODO: Use WP's transient API for caching.
 //---------------------------------
 
 global $post;

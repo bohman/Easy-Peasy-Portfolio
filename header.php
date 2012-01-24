@@ -5,6 +5,9 @@
   <title><?php wp_title('&raquo; ',TRUE,'right'); ?><?php bloginfo('name'); ?></title>
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
   <?php wp_head(); ?>
+  <!--[if (gte IE 6)&(lte IE 8)]>
+    <script type="text/javascript" src="<?php echo get_bloginfo('template_directory') . '/js/selectivizr-min.js'; ?>"></script>
+  <![endif]-->
 </head>
 <body <?php body_class('no-js'); ?>>
 
