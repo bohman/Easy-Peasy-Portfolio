@@ -10,7 +10,6 @@ jQuery(document).ready(function() {
   //---------------------------------
 
   activate = true;        // Change to false to deactivate all JavaScript animations. Mainly used to compare usability by Linus.
-  fadeTime = 125;         // Set your preferred title fade time in milliseconds
 
 
   //---------------------------------
@@ -25,17 +24,6 @@ jQuery(document).ready(function() {
   if(activate) {
     jQuery('body').removeClass('no-js').addClass('js');
   }
-
-
-  //---------------------------------
-  // Polaroid title fade on archives
-  //---------------------------------
-
-  jQuery('body.js > .posts > .archive > .polaroid').hover(function(){
-    jQuery(this).find('.caption').fadeIn(fadeTime);
-  }, function(){
-    jQuery(this).find('.caption').fadeOut(fadeTime*2);
-  });
 
 
   //---------------------------------

@@ -128,11 +128,15 @@ a.utility-info:hover {
   width: 202px;
   font-family: 'Yanone Kaffeesatz', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 30px;
-  display: none;
-  opacity: 0.8;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
-.no-js .polaroid:hover .caption {
-  display: block;
+.polaroid:hover .caption {
+  opacity: 0.8;
 }
 
 .polaroid .caption a {
