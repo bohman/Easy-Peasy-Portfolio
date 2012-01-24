@@ -28,9 +28,11 @@
 .wysiwyg p,
 .wysiwyg ul,
 .wysiwyg ol,
-.wysiwyg blockquote {
+.wysiwyg blockquote,
+.wysiwyg pre code {
   margin-top: 2em;
 }
+
 .wysiwyg h1 + p,
 .wysiwyg h2 + p,
 .wysiwyg h3 + p,
@@ -65,7 +67,8 @@
 .wysiwyg p:first-child,
 .wysiwyg ul:first-child,
 .wysiwyg ol:first-child,
-.wysiwyg blockquote:first-child {
+.wysiwyg blockquote:first-child,
+.wysiwyg pre:first-child code {
   margin-top: 0;
 }
 
@@ -149,11 +152,13 @@
 }
 
 .wysiwyg code {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Courier, 'Courier New', monospace;
+}
+
+.wysiwyg pre code {
   padding: 20px;
   background: #525966;
   display: block;
-  font-weight: bold;
   border-radius: 20px;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;

@@ -44,7 +44,7 @@ a {
 }
 
 a:hover {
-  color: #DDD;
+  color: #E3E4FF;
 }
 
 input[type="submit"]:active,
@@ -83,6 +83,7 @@ label {
   margin-left: auto;
   margin-right: auto;
 }
+
 .posts.center {
   width: 880px;
   padding: 0;
@@ -155,6 +156,7 @@ label {
   clear: left;
   overflow: hidden;
 }
+
 .aside .section:first-child {
   margin-top: 0;
 }
@@ -170,6 +172,11 @@ label {
   width: 75px;
   border: #16191C solid 3px;
   overflow: hidden;
+  opacity: 0.85;
+}
+
+.aside .gallery a:hover {
+  opacity: 1;
 }
 
 .aside .section.credit {
