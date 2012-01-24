@@ -32,7 +32,7 @@ if (!empty($flickrsetid) && !empty($flickrapikey)) {
   if(!empty($ch_data)) {
     $decoded = json_decode($ch_data, true);
 
-    if(!$decoded['stat'] == 'fail') {
+    if($decoded['stat'] == 'ok') {
       echo('<ul class="flickr-php gallery section">');
       foreach($decoded['photoset']['photo'] as $photo) {
         $squaresize = $photo['url_sq'];
