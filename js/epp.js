@@ -27,12 +27,11 @@ jQuery(document).ready(function() {
 
 
   //---------------------------------
-  // Centering polaroid images vertically
-  // and displaying a preloader
+  // Preloader for polaroids
   //---------------------------------
 
   jQuery('body.js .archive .polaroid .image:has(img)').prepend('<img class="preloader" src="/wp-content/themes/easypeasyportfolio/img/preloader.gif">');
-  jQuery('body.js .archive .polaroid .image .featured-image').hide().load(function(){
+  jQuery('body.js .archive .polaroid .image .featured-image').load(function(){
     jQuery(this).parent().find('> .preloader').fadeOut(700, function(){
       jQuery(this).parent().find('> .featured-image').fadeIn(700);
       jQuery(this).remove();
