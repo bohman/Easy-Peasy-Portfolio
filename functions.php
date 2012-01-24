@@ -99,39 +99,6 @@
 
 
   //---------------------------------
-  // Sidebars
-  //
-  // Creates widget areas. Call them in your theme with
-  // the following function: dynamic_sidebar('Name1');
-  // Don't forget to write awesomely helpful descriptions.
-  //---------------------------------
-
-  if(function_exists('register_sidebar')) {
-    register_sidebar(array(
-      'name' => 'Left footer',
-      'description' => 'Left part of the footer',
-      'id' => 'left-footer',
-      'before_widget' => '<li id="%1$s" class="wysiwyg widget %2$s">',
-      'after_widget'  => '</li>'
-    ));
-    register_sidebar(array(
-      'name' => 'Middle footer',
-      'description' => 'Middle part of the footer',
-      'id' => 'middle-footer',
-      'before_widget' => '<li id="%1$s" class="wysiwyg widget %2$s">',
-      'after_widget'  => '</li>',
-    ));
-    register_sidebar(array(
-      'name' => 'Right footer',
-      'description' => 'Right part of the footer',
-      'id' => 'right-footer',
-      'before_widget' => '<li id="%1$s" class="wysiwyg widget %2$s">',
-      'after_widget'  => '</li>',
-    ));
-  }
-
-
-  //---------------------------------
   // Image sizes
   //
   // Adding some image sizes to be used for featured images.
@@ -291,6 +258,47 @@
         </ul>
       <?php }
     }
+  }
+
+
+  //---------------------------------
+  // Easy Peasy contact footer
+  //
+  // Generates a list of links and things from the contact information
+  // entered in EPP options.
+  //---------------------------------
+
+  function epp_contact_footer() {
+    $epp_options = get_option('epp_theme_options');
+    $name = $epp_options['contactname'];
+    $phone = $epp_options['contactphone'];
+    $mail = $epp_options['contactmail'];
+    $twitter = $epp_options['contacttwitter'];
+    $linkedinurl = $epp_options['contactlinkedin'];
+    $flickrname = $epp_options['contactflickrname'];
+    $flickrurl = $epp_options['contactflickrurl'];
+
+    if($name || $phone || $mail || $twitter || $linkedinurl || $flickrname || $flickrurl) { ?>
+      <div id="footer" class="contact">
+        <ul class="center">
+          <?php if($phone) { ?>
+            <li class="phone"><b>Phone:</b> <?php echo $phone; ?></li>
+          <?php }
+          if($mail) { ?>
+            <li class="email"><b>E-mail:</b> <a href="mailto:<?php echo $mail; ?>?subject=Your portfolio"><?php echo $mail; ?></a></li>
+          <?php }
+          if($twitter) { ?>
+            <li class="twitter"><b>Twitter:</b> <a href="http://twitter.com/<?php echo $twitter; ?>">@<?php echo $twitter; ?></a></li>
+          <?php }
+          if($linkedinurl && $name) { ?>
+            <li class="linkedin"><b>LinkedIn:</b> <a href="<?php echo $linkedinurl; ?>"><?php echo $name; ?></a></li>
+          <?php }
+          if($flickrname && $flickrurl) { ?>
+            <li class="flickr"><b>Flickr:</b> <a href="<?php echo $flickrurl; ?>"><?php echo $flickrname; ?></a></li>
+          <?php } ?>
+        </ul>
+      </div>
+    <?php }
   }
 
 

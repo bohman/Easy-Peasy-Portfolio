@@ -61,6 +61,15 @@ button:active,
   box-shadow: inset 0px 2px 5px #424C54;
 }
 
+input[type="submit"]:active,
+button:active,
+.cat-nav a:active,
+.nav .menu a:active,
+.action-link:active {
+  color: #3E444E;
+}
+
+
 /* Titles */
 .header,
 .header a {

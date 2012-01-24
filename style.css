@@ -110,38 +110,6 @@ label {
 }
 
 
-/* FOOTER ---------------------- */
-#footer {
-  padding: 60px 20px 40px;
-  overflow: hidden;
-}
-
-#footer .column {
-  float: left;
-  margin-left: 40px;
-  width: 253px;
-}
-
-#footer .column:first-child {
-  margin-left: 0;
-}
-
-.widget {
-  margin-top: 40px;
-}
-
-.widget ul,
-.widget ol {
-  border: 0;
-  margin: 0;
-  padding: 0 0 0 20px;
-}
-
-.widget:first-child {
-  margin-top: 0;
-}
-
-
 /* FULL POST ----------------------
 .body - main content */
 .body {
@@ -351,4 +319,47 @@ TODO: consider this pretty temporary until you fixed the front page */
 
 #presentation .polaroid img {
   max-width: 240px;
+}
+
+
+/* CONTACT PAGE ---------------------- */
+body.page-template-template-about-php .body,
+body.page-template-template-about-php .aside {
+  margin-bottom: 60px;
+}
+
+.contact {
+  font-size: 30px;
+  padding: 40px;
+  margin-top: 60px;
+  clear: left;
+  background: #000;
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.contact li {
+  margin-top: 0.3em;
+}
+
+.contact li:first-child {
+  margin-top: 0;
+}
+
+.contact b {
+  display: inline-block;
+  color: #3E444E;
+  min-width: 170px;
+  text-align: right;
+  text-transform: lowercase;
+}
+
+.contact li,
+.contact li a {
+  color: #fff;
+}
+
+.contact li a:hover {
+  color: #677079;
 }

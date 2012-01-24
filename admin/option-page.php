@@ -64,7 +64,7 @@
     <div class="wrap">
       <?php screen_icon(); echo "<h2>" . get_current_theme() . __(' options') . "</h2>"; ?>
 
-      <p>By <?php echo($theme_data[Author]); ?>, the LEGO-maniac of <a href="http://swooshable.com">Swooshable</a>.</p>
+      <p>By <?php echo($theme_data['Author']); ?>, the LEGO-maniac of <a href="http://swooshable.com">Swooshable</a>.</p>
 
       <?php if (false !== $_REQUEST['updated']) : ?>
         <div class="updated fade"><p><strong><?php _e('Options saved'); ?></strong></p></div>
@@ -238,6 +238,101 @@
                <br />
              </td>
            </tr>
+           <tr valign="top">
+
+              <th scope="row">
+                <strong><?php _e('Contact options'); ?></strong>
+              </th>
+
+              <td>
+                <fieldset>
+                  <legend class="screen-reader-text">
+                    <span><?php _e('Contact options'); ?></span>
+                  </legend>
+
+                  <p style="color: #666666;">Easy Peasy Portfolio is built to promote you. Give the theme your contact options below, and it will display them in prominent positions. If you don't want to display one of the options, simply leave the field blank.</p>
+
+                  <label class="description" for="epp_theme_options[contactname]">
+                    <?php _e('Your name:'); ?>
+                  </label>
+                  <input
+                    id="epp_theme_options[contactname]"
+                    class="regular-text"
+                    type="text"
+                    name="epp_theme_options[contactname]"
+                    value="<?php esc_attr_e($options['contactname']); ?>"
+                  /><br/>
+
+                  <label class="description" for="epp_theme_options[contactphone]">
+                    <?php _e('Phone number:'); ?>
+                  </label>
+                  <input
+                    id="epp_theme_options[contactphone]"
+                    class="regular-text"
+                    type="text"
+                    name="epp_theme_options[contactphone]"
+                    value="<?php esc_attr_e($options['contactphone']); ?>"
+                  /><br/>
+
+                  <label class="description" for="epp_theme_options[contactmail]">
+                    <?php _e('E-mail:'); ?>
+                  </label>
+                  <input
+                    id="epp_theme_options[contactmail]"
+                    class="regular-text"
+                    type="text"
+                    name="epp_theme_options[contactmail]"
+                    value="<?php esc_attr_e($options['contactmail']); ?>"
+                  /><br/>
+
+                  <label class="description" for="epp_theme_options[contacttwitter]">
+                    <?php _e('Username on twitter (without the @):'); ?>
+                  </label>
+                  <input
+                    id="epp_theme_options[contacttwitter]"
+                    class="regular-text"
+                    type="text"
+                    name="epp_theme_options[contacttwitter]"
+                    value="<?php esc_attr_e($options['contacttwitter']); ?>"
+                  /><br/>
+
+                  <label class="description" for="epp_theme_options[contactlinkedin]">
+                    <?php _e('LinkedIn profile URL:'); ?>
+                  </label>
+                  <input
+                    id="epp_theme_options[contactlinkedin]"
+                    class="regular-text"
+                    type="text"
+                    name="epp_theme_options[contactlinkedin]"
+                    value="<?php esc_attr_e($options['contactlinkedin']); ?>"
+                  /><br/>
+
+                  <label class="description" for="epp_theme_options[contactflickrname]">
+                    <?php _e('Flickr username:'); ?>
+                  </label>
+                  <input
+                    id="epp_theme_options[contactflickrname]"
+                    class="regular-text"
+                    type="text"
+                    name="epp_theme_options[contactflickrname]"
+                    value="<?php esc_attr_e($options['contactflickrname']); ?>"
+                  /><br/>
+
+                  <label class="description" for="epp_theme_options[contactflickrurl]">
+                    <?php _e('Flickr url:'); ?>
+                  </label>
+                  <input
+                    id="epp_theme_options[contactflickrurl]"
+                    class="regular-text"
+                    type="text"
+                    name="epp_theme_options[contactflickrurl]"
+                    value="<?php esc_attr_e($options['contactflickrurl']); ?>"
+                  />
+
+                </fieldset>
+                <br />
+              </td>
+            </tr>
         </table>
 
         <p class="submit">
@@ -254,19 +349,23 @@
     global $easy_peasy_mode, $meta_flickr_set_id, $meta_custom_images;
 
     // Easy Peasy mode option must actually be in Easy Peasy mode array
-    if (!isset($input['easypeasymode']))
+    if (!isset($input['easypeasymode'])) {
       $input['easypeasymode'] = null;
-    if (!array_key_exists($input['easypeasymode'], $easy_peasy_mode))
+    }
+    if (!array_key_exists($input['easypeasymode'], $easy_peasy_mode)) {
       $input['easypeasymode'] = null;
+    }
 
     // Flickr API key must be safe text with no HTML tags
-    $input['flickrapikey'] = wp_filter_nohtml_kses( $input['flickrapikey'] );
+    $input['flickrapikey'] = wp_filter_nohtml_kses($input['flickrapikey']);
 
     // Custom images option must actually be in Flickr Set ID array
-    if (!isset($input['imagelinks']))
+    if (!isset($input['imagelinks'])) {
       $input['imagelinks'] = null;
-    if (!array_key_exists($input['imagelinks'], $meta_custom_images))
+    }
+    if (!array_key_exists($input['imagelinks'], $meta_custom_images)) {
       $input['imagelinks'] = null;
+    }
 
     return $input;
   }
