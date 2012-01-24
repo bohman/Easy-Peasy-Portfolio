@@ -31,22 +31,11 @@ jQuery(document).ready(function() {
   // and displaying a preloader
   //---------------------------------
 
-  jQuery('body.js .archive .polaroid .image:has(img)').prepend('<img class="preloader" src="/wp-content/themes/easypeasyportfolio/img/preloader.gif" />');
+  jQuery('body.js .archive .polaroid .image:has(img)').prepend('<img class="preloader" src="/wp-content/themes/easypeasyportfolio/img/preloader.gif">');
   jQuery('body.js .archive .polaroid .image .featured-image').hide().load(function(){
-    jQuery(this).each(function() {
-      var w = jQuery(this).width();
-      var h = jQuery(this).height();
-      if (w > h) {
-        jQuery(this).css({
-          'position' : 'relative',
-          'top' : '50%',
-          'margin-top' : '-'+h/2+'px'
-        });
-      }
-      jQuery(this).parent().find('> .preloader').fadeOut(700, function(){
-        jQuery(this).parent().find('> .featured-image').fadeIn(700);
-        jQuery(this).remove();
-      });
+    jQuery(this).parent().find('> .preloader').fadeOut(700, function(){
+      jQuery(this).parent().find('> .featured-image').fadeIn(700);
+      jQuery(this).remove();
     });
   }).each(function(){
     if (this.complete) {

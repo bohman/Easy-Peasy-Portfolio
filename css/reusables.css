@@ -13,6 +13,7 @@
   text-indent: -100px;
 }
 
+
 /* Action links and buttons */
 input[type="submit"],
 button,
@@ -87,6 +88,7 @@ button:active,
   font-family: 'Yanone Kaffeesatz', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
+
 /* General utility classes */
 .hidden {
   display: none;
@@ -104,30 +106,26 @@ a.utility-info:hover {
   color: #3E444E;
 }
 
+
 /* Polaroids */
 .polaroid {
-  *display: inline; /* To make IE7 recognize inline-block on block level elements */
   display: inline-block;
-  background: #fff url('img/back-polaroid.png') repeat;
+  background-color: #fff;
   padding: 40px;
   position: relative;
+  margin-bottom: 40px;
   box-shadow: 2px 2px 6px #222;
   -moz-box-shadow: 2px 2px 6px #222;
   -webkit-box-shadow: 2px 2px 6px #222;
-  margin-bottom: 40px;
-  float: left;
 }
 
 .polaroid .caption {
   color: #fff;
   position: absolute;
+  left: 0;
+  right: 0;
   bottom: 0;
-  background: #000;
-  padding: 20px;
-  margin: 20px 20px 20px 0;
-  width: 202px;
-  font-family: 'Yanone Kaffeesatz', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  font-size: 30px;
+  margin: 20px;
   opacity: 0;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -135,23 +133,18 @@ a.utility-info:hover {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
+
 .polaroid:hover .caption {
   opacity: 0.8;
 }
 
 .polaroid .caption a {
-  color: #fff;
-}
-.polaroid .caption a:hover {
-  text-decoration: none;
-}
-.polaroid .caption a:visited {
-  color: #bbb;
-}
-
-.polaroid img {
-  max-width: 800px;
   display: block;
+  color: #fff;
+  background: #000;
+  padding: 20px;
+  font-family: 'Yanone Kaffeesatz', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 30px;
 }
 
 .polaroid .image {
@@ -159,13 +152,11 @@ a.utility-info:hover {
   text-align: center;
   overflow: hidden;
   border: 1px solid #000;
-  display: block;
+  display: table-cell;
+  vertical-align: middle;
   text-decoration: none;
 }
 
-.polaroid .preloader {
-  top: 50%;
-  position: relative;
-  margin-top: -16px;
-  display: inline;
+.polaroid img {
+  max-width: 800px;
 }

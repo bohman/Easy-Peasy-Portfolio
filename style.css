@@ -112,8 +112,14 @@ label {
   display: block;
   margin-left: 10px;
 }
+
 .nav #sitename a {
   margin-left: 0;
+  opacity: 0.85;
+}
+
+.nav #sitename a:hover {
+  opacity: 1;
 }
 
 
@@ -272,7 +278,6 @@ li.archive {
 li.archive .polaroid {
   padding: 20px 20px 20px;
   margin: 0 !important;
-  float: none;
 }
 
 li.archive .polaroid .image {
