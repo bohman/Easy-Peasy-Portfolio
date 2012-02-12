@@ -41,17 +41,34 @@ if (!empty($flickrsetid) && !empty($flickrapikey)) {
         $thumbnailsize = $photo['url_t'];
         $smallsize = $photo['url_s'];
         $mediumsize = $photo['url_m'];
+        $largesize = $photo['url_l'];
         $originalsize = $photo['url_o'];
         $photoURL = 'http://www.flickr.com/photos/'. $decoded['photoset']['owner'] .'/'. $photo['id'];
-        $phototitle = $photo['title']; ?>
+        $phototitle = $photo['title'];
+        $boximage = '';
 
-        <li>
-          <a rel="gallery-<?php the_id(); ?>" title="<?php echo $phototitle; ?>" href="<?php echo $originalsize; ?>">
-            <img alt="<?php echo $phototitle; ?>" src="<?php echo $squaresize; ?>" />
-          </a>
-        </li>
+        if($largesize) {
+          $boximage = $largesize;
+        } else if($originalsize) {
+          $boximage = $originalsize;
+        } else if($mediumsize) {
+          $boximage = $mediumsize;
+        } else if($smallsize) {
+          $boximage = $smallsize;
+        } else {
+          $boximage = $thumbnailsize;
+        }
 
-      <?php }
+        if($boximage && $squaresize) { ?>
+
+          <li>
+            <a rel="gallery-<?php the_id(); ?>" title="<?php echo $phototitle; ?>" href="<?php echo $boximage; ?>">
+              <img alt="<?php echo $phototitle; ?>" src="<?php echo $squaresize; ?>" />
+            </a>
+          </li>
+
+        <?php }
+      }
       echo('</ul>');
     }
 
