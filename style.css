@@ -167,6 +167,7 @@ label {
 }
 
 .aside .gallery a {
+  background: #000;
   display: block;
   height: 75px;
   width: 75px;
@@ -294,6 +295,7 @@ li.archive .polaroid {
 li.archive .polaroid .image {
   height: 240px;
   width: 240px;
+  min-width: inherit;
 }
 
 li.archive .polaroid img.featured-image {
@@ -340,6 +342,10 @@ TODO: consider this pretty temporary until you fixed the front page */
   margin-left: 40px;
   padding: 20px;
   margin-bottom: 0;
+}
+
+#presentation .polaroid .image {
+  min-width: inherit;
 }
 
 #presentation .polaroid img {

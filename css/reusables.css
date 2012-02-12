@@ -56,6 +56,7 @@ button:active,
 .nav .menu .current-menu-item a,
 .action-link.active {
   color: #fff;
+  position: static;
   background: rgba(82, 89, 102, 0.7);
   -moz-box-shadow: inset 0px 2px 5px #424C54;
   -webkit-box-shadow: inset 0px 2px 5px #424C54;
@@ -155,8 +156,10 @@ a.utility-info:hover {
   display: table-cell;
   vertical-align: middle;
   text-decoration: none;
+  min-width: 800px;
 }
 
 .polaroid img {
   max-width: 800px;
+  vertical-align: top;
 }
