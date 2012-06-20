@@ -170,12 +170,17 @@
 .wysiwyg param,
 .wysiwyg object,
 .wysiwyg embed {
-  max-width: 95%; /* Media shouldn't break the layout */
+  max-width: 100%; /* Media shouldn't break the layout */
 }
 
+.wysiwyg .gist,
 .wysiwyg img {
   height: auto;  /* If image is resized, this ensures the height is adjusted in all browsers as well. */
   border: 5px solid #16191C;
+}
+
+.wysiwyg img {
+  max-width: 95%;
 }
 
 /* WordPress specific classes */
