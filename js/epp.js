@@ -33,7 +33,7 @@ jQuery(document).ready(function() {
   jQuery('body.js .archive .polaroid .image:has(img)').prepend('<img class="preloader" src="/wp-content/themes/easypeasyportfolio/img/preloader.gif">');
   jQuery('body.js .archive .polaroid .image .featured-image').load(function(){
     jQuery(this).parent().find('> .preloader').fadeOut(700, function(){
-      jQuery(this).parent().find('> .featured-image').fadeIn(700);
+      jQuery(this).parent().find('> .featured-image').css({ 'opacity': 1 });
       jQuery(this).remove();
     });
   }).each(function(){
@@ -55,7 +55,7 @@ jQuery(document).ready(function() {
     return typeof floatVal == 'undefined' ? Math.round(randVal) : randVal.toFixed(floatVal);
   }
 
-  jQuery('body.js .archive .polaroid, body.js #presentation .polaroid .image').each(function(){
+  jQuery('body.js .hentry.archive .polaroid, body.js #presentation .polaroid .image').each(function(){
     var degree = randomXtoY(-0.8,0.8)
     jQuery(this).parent().easyRotate({
       'degrees' : degree

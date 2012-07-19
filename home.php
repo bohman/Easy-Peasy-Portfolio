@@ -40,7 +40,7 @@ $epp_options = get_option('epp_theme_options'); ?>
 
 
   <h2 class="header center">Latest entries</h2>
-  <ul class="posts center">
+  <ul class="hfeed center">
     <?php query_posts($query_string . '&posts_per_page=6');
     get_template_part('loop', 'archive'); ?>
   </ul>

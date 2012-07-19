@@ -23,6 +23,7 @@ Going for a pretty monochrome thing. The colour scheme is under development. Yay
 @import url('css/reset.css');
 @import url('css/wysiwyg.css');
 @import url('css/reusables.css');
+@import url('css/animations.css');
 @import url('css/colorbox.css');
 
 
@@ -36,13 +37,9 @@ body {
 a {
   color: #FFF;
   text-decoration: none;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
 }
 
+a:focus,
 a:hover {
   color: #E3E4FF;
 }
@@ -84,7 +81,7 @@ label {
   margin-right: auto;
 }
 
-.posts.center {
+.hfeed.center {
   width: 880px;
   padding: 0;
 }
@@ -100,7 +97,7 @@ label {
 .nav ul {
   position: absolute;
   bottom: 5px;
-  right: 0;
+  right: 20px;
 }
 
 .nav li {
@@ -124,30 +121,34 @@ label {
 }
 
 
-/* FULL POST ----------------------
-.body - main content */
+/* FULL POST ---------------------- */
+/* In case someone use the full post in list view (like removes home.php)
+   this makes a list of full posts easier to read. */
+.hfeed .hentry {
+  margin-top: 60px;
+}
+.hfeed .hentry:first-child {
+  margin-top: 0;
+}
+
+/* .body - main content */
 .body {
   overflow: hidden;
   float: left;
   width: 418px;
-  margin: 0 84px 0 40px;
+  margin: 40px 84px 0 40px;
   clear: left;
 }
 
-/* In case someone use the full post in list view (like removes home.php)
-   this makes a list of full posts easier to read. */
-.posts .post .polaroid {
-  margin-top: 60px;
-}
-.posts .post:first-child .polaroid {
-  margin-top: 0;
+body.single .polaroid {
+  margin-bottom: 40px;
 }
 
 /* .aside - secondary content, not the new WP-aside */
 .aside { 
   float: left;
   width: 258px;
-  margin: 0 40px;
+  margin: 40px 40px 0;
 }
 
 .aside .section {
@@ -276,48 +277,47 @@ label {
   margin-right: 10px;
 }
 
-li.archive {
-  display: inline-block;
-  text-align: center;
-  margin-right: 14px;
-  margin-bottom: 14px;
+body.archive .hfeed {
   font-size: 0;
 }
 
-li.archive:nth-child(3n+3) {
+.hentry.archive {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 17px 17px 0 !important;
+}
+
+.hentry.archive:nth-child(3n+3) {
   margin-right: 0;
 }
 
-li.archive .polaroid {
-  padding: 20px 20px 20px;
-  margin: 0 !important;
+.hentry.archive .polaroid {
+  height: 242px;
+  width: 242px;
+  padding: 17px !important;
 }
 
-li.archive .polaroid .image {
-  height: 240px;
-  width: 240px;
-  min-width: inherit;
+.hentry.archive .polaroid .image {
+  line-height: 242px;
+  width: 242px;
+  height: 242px;
 }
 
-li.archive .polaroid img.featured-image {
-  max-height: 240px;
-  max-width: 240px;
-  height: auto;
-  width: auto;
-  display: none;
-  vertical-align: top;
+.hentry.archive .polaroid img.featured-image {
+  opacity: 0;
 }
 
-body.no-js li.archive .polaroid img.featured-image {
-  display: inline;
+body.no-js .hentry.archive .polaroid img.featured-image,
+.hentry.archive .polaroid img.preloader {
+  opacity: 1;
 }
 
-li.archive .polaroid .pseudo-image {
+.hentry.archive .polaroid .pseudo-image {
   line-height: 1em;
   height: 240px;
-  width: 240px;
   font-size: 130px;
   letter-spacing: -10px;
+  display: inline-block;
 }
 
 

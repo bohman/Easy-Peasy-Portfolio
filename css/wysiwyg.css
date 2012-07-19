@@ -179,6 +179,10 @@
   border: 5px solid #16191C;
 }
 
+.wysiwyg .gist .gist-file {
+  margin-bottom: 0;
+}
+
 .wysiwyg img {
   max-width: 95%;
 }

@@ -1,18 +1,4 @@
 /* REUSABLES ---------------------- */
-.pseudo-image {
-  background: #333;
-  color: #222;
-  text-align: center;
-  overflow: hidden;
-  font-weight: bold;
-  text-transform: uppercase;
-  width: 800px;
-  height: 270px;
-  font-size: 400px;
-  letter-spacing: -40px;
-  text-indent: -100px;
-}
-
 
 /* Action links and buttons */
 input[type="submit"],
@@ -110,29 +96,21 @@ a.utility-info:hover {
 
 /* Polaroids */
 .polaroid {
-  display: inline-block;
   background-color: #fff;
   padding: 40px;
   position: relative;
-  margin-bottom: 40px;
-  box-shadow: 2px 2px 6px #222;
   -moz-box-shadow: 2px 2px 6px #222;
   -webkit-box-shadow: 2px 2px 6px #222;
+  box-shadow: 2px 2px 6px #222;
 }
 
 .polaroid .caption {
-  color: #fff;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  margin: 20px;
+  margin: 17px;
   opacity: 0;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
 }
 
 .polaroid:hover .caption {
@@ -149,17 +127,39 @@ a.utility-info:hover {
 }
 
 .polaroid .image {
+  font-size: 0;
   background: #000;
   text-align: center;
   overflow: hidden;
   border: 1px solid #000;
-  display: table-cell;
-  vertical-align: middle;
+  display: block;
   text-decoration: none;
-  min-width: 800px;
 }
 
-.polaroid img {
-  max-width: 800px;
+.polaroid .image > * {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.polaroid .image > img {
+  height: auto;
+  vertical-align: middle;
+}
+
+.polaroid .image > .pseudo-image {
   vertical-align: top;
+}
+
+.polaroid .pseudo-image {
+  background: #333;
+  color: #222;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 270px;
+  max-height: 100%;
+  font-size: 400px;
+  letter-spacing: -40px;
+  text-indent: -100px;
 }

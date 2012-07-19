@@ -7,7 +7,7 @@ if (is_archive()) {
 <h1 class="header center"><?php single_cat_title(); ?></h1>
 <?php epp_subcats('center'); ?>
 
-<ul class="posts center">
+<ul class="hfeed center">
   <?php get_template_part('loop', 'archive'); ?>
 </ul>
 

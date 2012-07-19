@@ -1,0 +1,30 @@
+a {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.polaroid .caption {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.hentry.archive .polaroid img.featured-image {
+  -moz-transition-property: all;
+  -moz-transition-duration: 0.7s;
+  -moz-transition-delay: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.7s;
+  -webkit-transition-delay: 0;
+  -o-transition-property: all;
+  -o-transition-duration: 0.7s;
+  -o-transition-delay: 0;
+  transition-property: all;
+  transition-duration: 0.7s;
+  transition-delay: 0;
+}
