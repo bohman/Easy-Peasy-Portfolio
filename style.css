@@ -277,6 +277,7 @@ body.single .polaroid {
   margin-right: 10px;
 }
 
+body.home .hfeed, /* TODO: generalize so that this is automatically applied to all list views containing thumbs */
 body.archive .hfeed {
   font-size: 0;
 }

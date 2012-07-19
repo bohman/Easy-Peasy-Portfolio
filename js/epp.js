@@ -9,7 +9,7 @@ jQuery(document).ready(function() {
   // you can adjust a few parameters below.
   //---------------------------------
 
-  activate = true;        // Change to false to deactivate all JavaScript animations. Mainly used to compare usability by Linus.
+  var activate = true;        // Change to false to deactivate all JavaScript animations. Mainly used to compare usability by Linus.
 
 
   //---------------------------------

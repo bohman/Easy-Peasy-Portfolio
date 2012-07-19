@@ -99,6 +99,7 @@ a.utility-info:hover {
   background-color: #fff;
   padding: 40px;
   position: relative;
+  text-align: center;
   -moz-box-shadow: 2px 2px 6px #222;
   -webkit-box-shadow: 2px 2px 6px #222;
   box-shadow: 2px 2px 6px #222;
@@ -144,6 +145,7 @@ a.utility-info:hover {
 
 .polaroid .image > img {
   height: auto;
+  width: auto;
   vertical-align: middle;
 }
 
@@ -162,4 +164,12 @@ a.utility-info:hover {
   font-size: 400px;
   letter-spacing: -40px;
   text-indent: -100px;
+}
+
+.polaroid .preloader {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  left: 50%;
+  margin-left: -16px;
 }

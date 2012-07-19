@@ -14,6 +14,7 @@ a {
   transition: all 0.3s ease-out;
 }
 
+.polaroid .preloader,
 .hentry.archive .polaroid img.featured-image {
   -moz-transition-property: all;
   -moz-transition-duration: 0.7s;
