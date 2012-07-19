@@ -15,7 +15,7 @@
     if(!is_admin()) {
       wp_enqueue_script('utilities', get_bloginfo('template_directory') . '/js/epp.js', array('jquery'));
       wp_enqueue_script('easyrotation', get_bloginfo('template_directory') . '/js/easyrotate.js', array('jquery'));
-      wp_enqueue_script('colorbox', get_bloginfo('template_directory') . '/js/jquery.colorbox-min.js', array('jquery'), '1.3.17');
+      wp_enqueue_script('colorbox', get_bloginfo('template_directory') . '/js/jquery.colorbox-min.js', array('jquery'), '1.3.19');
       wp_enqueue_script('labelify', get_bloginfo('template_directory') . '/js/labelify.js', array('jquery'), '1.3');
     }
   }

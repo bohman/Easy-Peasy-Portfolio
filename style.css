@@ -136,13 +136,14 @@ label {
   overflow: hidden;
   float: left;
   width: 418px;
-  margin: 40px 84px 0 40px;
+  margin: 0 84px 0 40px;
   clear: left;
 }
 
-body.single .polaroid {
-  margin-bottom: 40px;
+.polaroid + .body {
+  margin-top: 40px;
 }
+
 
 /* .aside - secondary content, not the new WP-aside */
 .aside { 
