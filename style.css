@@ -325,6 +325,33 @@ body.no-js .hentry.archive .polaroid img.featured-image,
 
 /* HOME ---------------------- 
 TODO: consider this pretty temporary until you fixed the front page */
+.slideshow {
+  background: rgba(82, 89, 102, 0.3);
+  height: 500px;
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.slideshow .hentry {
+  opacity: 0;
+  position: absolute !important;
+  top: 40px;
+  width: 800px;
+  left: 50%;
+  margin-left: -400px;
+}
+
+.slideshow .hentry.active,
+body.no-js .slideshow .hentry:first-child {
+ opacity: 1;
+ z-index: 2;
+}
+
+.slideshow .caption {
+  margin: 40px;
+}
+
 .push-link {
   overflow: hidden;
   margin-top: 1em !important;
@@ -356,12 +383,7 @@ TODO: consider this pretty temporary until you fixed the front page */
 }
 
 
-/* CONTACT PAGE ---------------------- */
-body.page-template-template-about-php .body,
-body.page-template-template-about-php .aside {
-  margin-bottom: 60px;
-}
-
+/* CONTACT FOOTER ---------------------- */
 .contact {
   font-size: 30px;
   padding: 40px;
@@ -371,6 +393,10 @@ body.page-template-template-about-php .aside {
   display: block;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.slideshow + .contact {
+  margin-top: 0;
 }
 
 .contact li {

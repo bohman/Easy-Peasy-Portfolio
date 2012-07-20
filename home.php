@@ -1,11 +1,10 @@
 <?php
 // TODO: This is a messy template. Consider it a temporary fix and rework it.
-get_header(); 
+get_header();
 $epp_options = get_option('epp_theme_options'); ?>
 
 
   <div id="presentation" class="center">
-
     <?php if ($epp_options['frontimageurl']) { ?>
       <div class="polaroid">
         <div class="image">
@@ -35,15 +34,17 @@ $epp_options = get_option('epp_theme_options'); ?>
         <?php } ?>
       </div>
     <?php } ?>
-
   </div>
 
 
-  <h2 class="header center">Latest entries</h2>
-  <ul class="hfeed center">
-    <?php query_posts($query_string . '&posts_per_page=6');
-    get_template_part('loop', 'archive'); ?>
-  </ul>
+  <div class="slideshow">
+    <ul class="center">
+      <?php
+        query_posts($query_string . '&posts_per_page=6');
+        get_template_part('loop', 'archive');
+      ?>
+    </ul>
+  </div>
 
 
 <?php get_footer(); ?>

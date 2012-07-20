@@ -1,35 +1,36 @@
-jQuery(document).ready(function() {
+//---------------------------------
+// Settings
+//
+// Easy Peasy Portfolio uses jQuery-based JavaScript to enhance
+// the user experience. If you don't want to dig into the script
+// you can adjust a few parameters below.
+//---------------------------------
+
+var activate = true;        // Change to false to deactivate all JavaScript animations. Mainly used to compare usability by Linus.
+var slideShowSpeed = 5000;  // Slideshows peed in milliseconds
 
 
-  //---------------------------------
-  // Settings
-  //
-  // Easy Peasy Portfolio uses jQuery-based JavaScript to enhance
-  // the user experience. If you don't want to dig into the script
-  // you can adjust a few parameters below.
-  //---------------------------------
+//---------------------------------
+// Activating JS
+//
+// Doing it the easy way: if we want to use effects,
+// just remove the .no-js class from the wrapper.
+// This is to make it easier to compare usability with
+// and without effects, and style appropriately.
+//---------------------------------
 
-  var activate = true;        // Change to false to deactivate all JavaScript animations. Mainly used to compare usability by Linus.
-
-
-  //---------------------------------
-  // Activating JS
-  //
-  // Doing it the easy way: if we want to use effects,
-  // just remove the .no-js class from the wrapper.
-  // This is to make it easier to compare usability with
-  // and without effects, and style appropriately.
-  //---------------------------------
-
+function eppActivateJS() {
   if(activate) {
     jQuery('body').removeClass('no-js').addClass('js');
   }
+}
 
 
-  //---------------------------------
-  // Preloader for polaroids
-  //---------------------------------
+//---------------------------------
+// Preloader for polaroids
+//---------------------------------
 
+function eppPreloadPolaroids() {
   jQuery('body.js .archive .polaroid .image:has(img)').prepend('<img class="preloader" src="/wp-content/themes/easypeasyportfolio/img/preloader.gif">');
   jQuery('body.js .archive .polaroid .image .featured-image').load(function(){
     jQuery(this).parent().find('> .preloader').fadeOut(700, function(){
@@ -41,21 +42,23 @@ jQuery(document).ready(function() {
       jQuery(this).trigger('load');
     }
   });
+}
 
 
-  //---------------------------------
-  // Random rotation of polaroids on archive
-  //
-  // Uses the easy element rotation jQuery plugin:
-  // http://plugins.jquery.com/project/easy-element-rotation
-  //---------------------------------
+//---------------------------------
+// Random rotation of polaroids on archive
+//
+// Uses the easy element rotation jQuery plugin:
+// http://plugins.jquery.com/project/easy-element-rotation
+//---------------------------------
 
-  function randomXtoY(minVal, maxVal, floatVal) {
-    var randVal = minVal+(Math.random()*(maxVal-minVal));
-    return typeof floatVal == 'undefined' ? Math.round(randVal) : randVal.toFixed(floatVal);
-  }
+function randomXtoY(minVal, maxVal, floatVal) {
+  var randVal = minVal+(Math.random()*(maxVal-minVal));
+  return typeof floatVal == 'undefined' ? Math.round(randVal) : randVal.toFixed(floatVal);
+}
 
-  jQuery('body.js .hentry.archive .polaroid, body.js #presentation .polaroid .image').each(function(){
+function eppRotatePolaroids() {
+  jQuery('body.js .hentry.archive .polaroid, body.js #presentation .polaroid .image, body.js .slideshow .polaroid').each(function(){
     var degree = randomXtoY(-0.8,0.8)
     jQuery(this).parent().easyRotate({
       'degrees' : degree
@@ -64,19 +67,21 @@ jQuery(document).ready(function() {
       'position' : 'static'
     });
   });
+}
 
 
-  //---------------------------------
-  // Gallery images popup
-  //
-  // Places the large gallery images in a colorbox, so we don't
-  // have to open them in a new tab. Must be loaded after everything
-  // else when we load flickr images with JS - hence the window.load.
-  //
-  // Uses the awesome Colorbox jQuery plugin:
-  // http://colorpowered.com/colorbox/
-  //---------------------------------
+//---------------------------------
+// Gallery images popup
+//
+// Places the large gallery images in a colorbox, so we don't
+// have to open them in a new tab. Must be loaded after everything
+// else when we load flickr images with JS - hence the window.load.
+//
+// Uses the awesome Colorbox jQuery plugin:
+// http://colorpowered.com/colorbox/
+//---------------------------------
 
+function eppGalleryBox() {
   jQuery(window).load(function() {
     jQuery('body.js .gallery a').colorbox({
       'initialWidth' : '200',
@@ -87,18 +92,20 @@ jQuery(document).ready(function() {
       'current' : '{current} of {total}'
     });
   });
+}
 
 
-  //---------------------------------
-  // Labelify
-  //
-  // Hides the comment labels and places them in the input fields.
-  // Cleaner, and better usability too.
-  //
-  // Uses the neat labelify jQuery plugin:
-  // http://colorpowered.com/colorbox/
-  //---------------------------------
+//---------------------------------
+// Labelify
+//
+// Hides the comment labels and places them in the input fields.
+// Cleaner, and better usability too.
+//
+// Uses the neat labelify jQuery plugin:
+// http://www.kryogenix.org/code/browser/labelify/
+//---------------------------------
 
+function eppLabelify() {
   jQuery('body.js #respond #commentform input[type="text"], body.js #respond #commentform textarea').each(function(){
     if (jQuery(this).attr('value') == '') {
       jQuery(this).labelify({
@@ -107,6 +114,54 @@ jQuery(document).ready(function() {
     }
   });
   jQuery('body.js #respond #commentform label').remove();
+}
 
 
+//---------------------------------
+// Front page slideshow
+//---------------------------------
+
+function eppLoadNextSlide() {
+  var slideshow = jQuery('body.home.js .slideshow');
+  var currentSlide = slideshow.find('.hentry.active');
+  var nextSlide = currentSlide.next();
+  if (!nextSlide.length) { nextSlide = slideshow.find('.hentry:first-child'); }
+  var nextSlideHeight = nextSlide.outerHeight();
+
+  slideshow.css({ 'height' : nextSlideHeight }).find('.hentry').removeClass('active');
+  nextSlide.addClass('active');
+
+  //clearTimeout(eppNextSlideTimeout);
+  eppNextSlideTimeout = setTimeout(function(){
+    eppLoadNextSlide();
+  }, slideShowSpeed);
+}
+
+function eppFrontPageSlideshow() {
+  var slideshow = jQuery('body.home.js .slideshow');
+  if(slideshow.length) {
+    slideshow.find('.hentry:first-child img').load(function() {
+        slideshow
+          .css({ 'height' : slideshow.find('.hentry:first-child').outerHeight() })
+          .find('.hentry:first-child').addClass('active');
+
+      setTimeout(function(){
+        eppLoadNextSlide();
+      }, slideShowSpeed);
+    });
+  }
+}
+
+
+
+//---------------------------------
+// LET'S ROLL
+//---------------------------------
+jQuery(document).ready(function() {
+  eppActivateJS();
+  eppPreloadPolaroids();
+  eppRotatePolaroids();
+  eppGalleryBox();
+  eppLabelify();
+  eppFrontPageSlideshow();
 });

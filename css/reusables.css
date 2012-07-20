@@ -140,7 +140,6 @@ a.utility-info:hover {
 .polaroid .image > * {
   display: inline-block;
   max-width: 100%;
-  max-height: 100%;
 }
 
 .polaroid .image > img {

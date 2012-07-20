@@ -1,21 +1,21 @@
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-  <li <?php post_class('archive'); ?>>
+<?php
+
+if(is_home()) {
+  $hentryclass = '';
+} else {
+  $hentryclass = 'archive';
+}
+
+if (have_posts()) : while (have_posts()) : the_post(); ?>
+  <li <?php post_class($hentryclass); ?>>
 
     <div class="polaroid">
       <a class="image" href="<?php the_permalink(); ?>" title="Have a closer look at <?php the_title();?>">
         <?php epp_featured_image(); ?>
       </a>
-      <?php if(is_home()) { ?>
-        <h3 class="caption">
-      <?php } else { ?>
-        <h2 class="caption">
-      <?php } ?>
+      <h2 class="caption">
         <a href="<?php the_permalink(); ?>" title="Have a closer look at <?php the_title();?>"><?php the_title(); ?></a>
-      <?php if(is_home()) { ?>
-        </h3>
-      <?php } else { ?>
-        </h2>
-      <?php } ?>
+      </h2>
     </div>
 
   </li>
