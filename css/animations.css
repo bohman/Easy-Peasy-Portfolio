@@ -32,34 +32,3 @@ a {
   transition-duration: 0.7s;
   transition-delay: 0;
 }
-
-/* Front page slideshow */
-.slideshow {
-  -moz-transition-property: height;
-  -moz-transition-duration: 0.7s;
-  -moz-transition-delay: 0;
-  -webkit-transition-property: height;
-  -webkit-transition-duration: 0.7s;
-  -webkit-transition-delay: 0;
-  -o-transition-property: height;
-  -o-transition-duration: 0.7s;
-  -o-transition-delay: 0;
-  transition-property: height;
-  transition-duration: 0.7s;
-  transition-delay: 0;
-}
-
-.slideshow .hentry {
-  -moz-transition-property: opacity;
-  -moz-transition-duration: 0.7s;
-  -moz-transition-delay: 0;
-  -webkit-transition-property: opacity;
-  -webkit-transition-duration: 0.7s;
-  -webkit-transition-delay: 0;
-  -o-transition-property: opacity;
-  -o-transition-duration: 0.7s;
-  -o-transition-delay: 0;
-  transition-property: opacity;
-  transition-duration: 0.7s;
-  transition-delay: 0;
-}

@@ -7,7 +7,6 @@
 //---------------------------------
 
 var activate = true;        // Change to false to deactivate all JavaScript animations. Mainly used to compare usability by Linus.
-var slideShowSpeed = 5000;  // Slideshows peed in milliseconds
 
 
 //---------------------------------
@@ -58,7 +57,7 @@ function randomXtoY(minVal, maxVal, floatVal) {
 }
 
 function eppRotatePolaroids() {
-  jQuery('body.js .hentry.archive .polaroid, body.js #presentation .polaroid .image, body.js .slideshow .polaroid').each(function(){
+  jQuery('body.js .hentry.archive .polaroid, body.js #presentation .polaroid .image').each(function(){
     var degree = randomXtoY(-0.8,0.8)
     jQuery(this).parent().easyRotate({
       'degrees' : degree
@@ -118,43 +117,6 @@ function eppLabelify() {
 
 
 //---------------------------------
-// Front page slideshow
-//---------------------------------
-
-function eppLoadNextSlide() {
-  var slideshow = jQuery('body.home.js .slideshow');
-  var currentSlide = slideshow.find('.hentry.active');
-  var nextSlide = currentSlide.next();
-  if (!nextSlide.length) { nextSlide = slideshow.find('.hentry:first-child'); }
-  var nextSlideHeight = nextSlide.outerHeight();
-
-  slideshow.css({ 'height' : nextSlideHeight }).find('.hentry').removeClass('active');
-  nextSlide.addClass('active');
-
-  //clearTimeout(eppNextSlideTimeout);
-  eppNextSlideTimeout = setTimeout(function(){
-    eppLoadNextSlide();
-  }, slideShowSpeed);
-}
-
-function eppFrontPageSlideshow() {
-  var slideshow = jQuery('body.home.js .slideshow');
-  if(slideshow.length) {
-    slideshow.find('.hentry:first-child img').load(function() {
-        slideshow
-          .css({ 'height' : slideshow.find('.hentry:first-child').outerHeight() })
-          .find('.hentry:first-child').addClass('active');
-
-      setTimeout(function(){
-        eppLoadNextSlide();
-      }, slideShowSpeed);
-    });
-  }
-}
-
-
-
-//---------------------------------
 // LET'S ROLL
 //---------------------------------
 jQuery(document).ready(function() {
@@ -163,5 +125,4 @@ jQuery(document).ready(function() {
   eppRotatePolaroids();
   eppGalleryBox();
   eppLabelify();
-  eppFrontPageSlideshow();
 });

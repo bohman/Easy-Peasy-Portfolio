@@ -1,13 +1,5 @@
-<?php
-
-if(is_home()) {
-  $hentryclass = '';
-} else {
-  $hentryclass = 'archive';
-}
-
-if (have_posts()) : while (have_posts()) : the_post(); ?>
-  <li <?php post_class($hentryclass); ?>>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+  <li <?php post_class('archive'); ?>>
 
     <div class="polaroid">
       <a class="image" href="<?php the_permalink(); ?>" title="Have a closer look at <?php the_title();?>">
