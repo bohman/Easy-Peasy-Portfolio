@@ -169,7 +169,8 @@
 .wysiwyg video,
 .wysiwyg param,
 .wysiwyg object,
-.wysiwyg embed {
+.wysiwyg embed,
+.wysiwyg iframe {
   max-width: 100%; /* Media shouldn't break the layout */
 }
 
