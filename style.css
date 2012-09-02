@@ -92,6 +92,7 @@ label {
   margin-bottom: 60px;
   margin-top: 30px;
   position: relative;
+  min-height: 50px;
 }
 
 .nav ul {
@@ -114,6 +115,7 @@ label {
 .nav #sitename a {
   margin-left: 0;
   opacity: 0.85;
+  font-size: 60px !important;
 }
 
 .nav #sitename a:hover {

@@ -14,9 +14,9 @@
   <div class="nav center">
 
     <?php if(is_singular() || is_archive()) { ?>
-      <div id="sitename">
+      <div id="sitename" class="header">
     <?php } else { ?>
-      <h1 id="sitename">
+      <h1 id="sitename" class="header">
     <?php } ?>
 
       <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
