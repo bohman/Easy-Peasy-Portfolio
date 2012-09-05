@@ -17,6 +17,7 @@
       wp_enqueue_script('easyrotation', get_bloginfo('template_directory') . '/js/easyrotate.js', array('jquery'));
       wp_enqueue_script('colorbox', get_bloginfo('template_directory') . '/js/jquery.colorbox-min.js', array('jquery'), '1.3.19');
       wp_enqueue_script('labelify', get_bloginfo('template_directory') . '/js/labelify.js', array('jquery'), '1.3');
+      wp_enqueue_script('kvdb', get_bloginfo('template_directory') . '/js/kvd-banner.js', array('jquery'), '1.3');
     }
   }
 
@@ -277,8 +278,10 @@
     $linkedinurl = $epp_options['contactlinkedin'];
     $flickrname = $epp_options['contactflickrname'];
     $flickrurl = $epp_options['contactflickrurl'];
+    $deviantartname = $epp_options['contactdeviantartname'];
+    $deviantarturl = $epp_options['contactdeviantarturl'];
 
-    if($name || $phone || $mail || $twitter || $linkedinurl || $flickrname || $flickrurl) { ?>
+    if($name || $phone || $mail || $twitter || $linkedinurl || $flickrname || $flickrurl || $deviantartname || $deviantarturl) { ?>
       <div id="footer" class="contact">
         <ul class="center">
           <?php if($phone) { ?>
@@ -295,6 +298,9 @@
           <?php }
           if($flickrname && $flickrurl) { ?>
             <li class="flickr"><b>Flickr:</b> <a href="<?php echo $flickrurl; ?>"><?php echo $flickrname; ?></a></li>
+          <?php }
+          if($deviantartname && $deviantarturl) { ?>
+            <li class="flickr"><b>Deviant Art:</b> <a href="<?php echo $deviantarturl; ?>"><?php echo $deviantartname; ?></a></li>
           <?php } ?>
         </ul>
       </div>

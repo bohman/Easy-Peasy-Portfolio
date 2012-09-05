@@ -327,6 +327,28 @@
                     type="text"
                     name="epp_theme_options[contactflickrurl]"
                     value="<?php esc_attr_e($options['contactflickrurl']); ?>"
+                  /><br/>
+
+                  <label class="description" for="epp_theme_options[contactdeviantartname]">
+                    <?php _e('Deviant Art username:'); ?>
+                  </label>
+                  <input
+                    id="epp_theme_options[contactdeviantartname]"
+                    class="regular-text"
+                    type="text"
+                    name="epp_theme_options[contactdeviantartname]"
+                    value="<?php esc_attr_e($options['contactdeviantartname']); ?>"
+                  /><br/>
+
+                  <label class="description" for="epp_theme_options[contactdeviantarturl]">
+                    <?php _e('Deviant Art url:'); ?>
+                  </label>
+                  <input
+                    id="epp_theme_options[contactdeviantarturl]"
+                    class="regular-text"
+                    type="text"
+                    name="epp_theme_options[contactdeviantarturl]"
+                    value="<?php esc_attr_e($options['contactdeviantarturl']); ?>"
                   />
 
                 </fieldset>
