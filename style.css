@@ -3,7 +3,7 @@ Theme Name: Easy Peasy Portfolio
 Theme URI: http://linusbohman.se
 Author URI: http://linusbohman.se
 Description: A great looking portfolio theme that streamlines your backend. Y'know, so you can focus on creating more awesome work rather than tinkering with a bunch of options you don't need.
-Version: 0.6
+Version: 0.84
 Author: Linus Bohman
 
 
@@ -288,16 +288,16 @@ body.archive .hfeed {
 .hentry.archive {
   display: inline-block;
   vertical-align: top;
-  margin: 0 17px 17px 0 !important;
+  margin: 0 24px 24px 0 !important;
 }
 
 .hentry.archive:nth-child(3n+3) {
-  margin-right: 0;
+  margin-right: 0 !important;
 }
 
 .hentry.archive .polaroid {
-  height: 242px;
-  width: 242px;
+  height: 243px;
+  width: 243px;
   padding: 17px !important;
 }
 
@@ -381,7 +381,7 @@ TODO: consider this pretty temporary until you fixed the front page */
 .contact b {
   display: inline-block;
   color: #3E444E;
-  min-width: 170px;
+  min-width: 190px;
   text-align: right;
   text-transform: lowercase;
 }
