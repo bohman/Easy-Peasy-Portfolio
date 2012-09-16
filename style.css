@@ -126,6 +126,16 @@ label {
 /* FULL POST ---------------------- */
 /* In case someone use the full post in list view (like removes home.php)
    this makes a list of full posts easier to read. */
+
+body.single .hentry:after {
+  content: ' ';
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
 .hfeed .hentry {
   margin-top: 60px;
 }

@@ -40,6 +40,17 @@
     )
   );
 
+  $use_comments = array(
+    'yes' => array(
+      'value' => 'yes',
+      'label' => __('Yes, hide everything related to comments')
+    ),
+    'no' => array(
+      'value' => 'no',
+      'label' => __('No, don\'t hide my lovely comments')
+    )
+  );
+
   $meta_custom_images = array(
     'yes' => array(
       'value' => 'yes',
@@ -54,7 +65,7 @@
 
   // Create the options page
   function epp_do_page() {
-    global $easy_peasy_mode, $meta_flickr_set_id, $meta_custom_images;
+    global $easy_peasy_mode, $use_comments, $meta_flickr_set_id, $meta_custom_images;
 
     $theme_data = get_theme_data(get_bloginfo(stylesheet_url));
 
@@ -112,8 +123,48 @@
               <br />
             </td>
           </tr>
+
+
           <tr valign="top">
 
+            <th scope="row">
+              <strong><?php _e('Use comments'); ?></strong>
+            </th>
+
+            <td>
+              <fieldset>
+                <legend class="screen-reader-text">
+                  <span><?php _e('Use comments'); ?></span>
+                </legend>
+
+                <p style="color: #666666;">Some portfolios don't want comments. If you disable comments here no indications about commments will be shown anywhere. If enabled, WordPress built in comments will be used along with closed/open messages.</p>
+
+                <?php if (!isset($checked)) $checked = '';
+                  foreach ($use_comments as $option) {
+
+                    $radio_setting = $options['usecomments'];
+
+                    // Determine if this option is selected or not
+                    if ('' != $radio_setting) {
+                      if ($options['usecomments'] == $option['value']) {
+                        $checked = "checked=\"checked\"";
+                      } else {
+                        $checked = '';
+                      }
+                    }
+                    // Iterate and display all radio options ?>
+                    <label class="description">
+                      <input type="radio" name="epp_theme_options[usecomments]" value="<?php esc_attr_e($option['value']); ?>" <?php echo $checked; ?> /> <?php echo $option['label']; ?>
+                    </label><br />
+
+                <?php } ?>
+              </fieldset>
+              <br />
+            </td>
+          </tr>
+
+
+          <tr valign="top">
             <th scope="row">
               <strong><?php _e('Gallery images'); ?></strong>
             </th>
@@ -177,7 +228,7 @@
                    <span><?php _e('Front Page'); ?></span>
                  </legend>
 
-                 <p style="color: #666666;">here's the front description</p>
+                 <p style="color: #666666;">You can set certain things on the front page. For, this is done here, but this will be moved soon-ish.</p>
 
                  <label class="description" for="epp_theme_options[frontheadline]">
                    <?php _e('Headline:'); ?>
@@ -376,6 +427,14 @@
     }
     if (!array_key_exists($input['easypeasymode'], $easy_peasy_mode)) {
       $input['easypeasymode'] = null;
+    }
+
+    // Use comments validation
+    if (!isset($input['usecomments'])) {
+      $input['usecomments'] = null;
+    }
+    if (!array_key_exists($input['usecomments'], $easy_peasy_mode)) {
+      $input['usecomments'] = null;
     }
 
     // Flickr API key must be safe text with no HTML tags

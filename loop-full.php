@@ -23,9 +23,11 @@
       ?>
     </div>
 
-    <div class="comments">
-      <?php comments_template('', true); ?>
-    </div>
+    <?php $epp_options = get_option('epp_theme_options'); if($epp_options['usecomments'] != 'yes') { ?>
+      <div class="comments">
+        <?php comments_template('', true); ?>
+      </div>
+    <?php } ?>
 
   </li>
 <?php endwhile; else : endif; ?>

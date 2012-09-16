@@ -17,7 +17,6 @@
       wp_enqueue_script('easyrotation', get_bloginfo('template_directory') . '/js/easyrotate.js', array('jquery'));
       wp_enqueue_script('colorbox', get_bloginfo('template_directory') . '/js/jquery.colorbox-min.js', array('jquery'), '1.3.19');
       wp_enqueue_script('labelify', get_bloginfo('template_directory') . '/js/labelify.js', array('jquery'), '1.3');
-      wp_enqueue_script('kvdb', get_bloginfo('template_directory') . '/js/kvd-banner.js', array('jquery'), '1.3');
     }
   }
 
@@ -111,7 +110,7 @@
   //---------------------------------
 
   add_image_size('single-post-gallery-thumbnail', 75, 75, true);
-  add_image_size('archive-featured-image', 240, 240);
+  add_image_size('archive-featured-image', 243, 243);
   add_image_size('single-post-featured-image', 800, 700);
 
 
