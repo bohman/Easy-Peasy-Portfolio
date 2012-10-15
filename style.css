@@ -3,7 +3,7 @@ Theme Name: Easy Peasy Portfolio
 Theme URI: http://linusbohman.se
 Author URI: http://linusbohman.se
 Description: A great looking portfolio theme that streamlines your backend. Y'know, so you can focus on creating more awesome work rather than tinkering with a bunch of options you don't need.
-Version: 0.84
+Version: 0.87
 Author: Linus Bohman
 
 
@@ -127,6 +127,7 @@ label {
 /* In case someone use the full post in list view (like removes home.php)
    this makes a list of full posts easier to read. */
 
+body.page .hentry:after,
 body.single .hentry:after {
   content: ' ';
 	display: block;

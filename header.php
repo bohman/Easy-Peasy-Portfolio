@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js">
 <head>
   <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+  <script>
+    document.documentElement.className = document.documentElement.className.replace(/(\s|^)no-js(\s|$)/, '$1' + 'js' + '$2');
+  </script>
   <title><?php wp_title('&raquo; ', TRUE, 'right'); ?><?php bloginfo('name'); ?></title>
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
   <?php wp_head(); ?>
@@ -9,7 +12,7 @@
     <script type="text/javascript" src="<?php echo get_bloginfo('template_directory') . '/js/selectivizr-min.js'; ?>"></script>
   <![endif]-->
 </head>
-<body <?php body_class('no-js'); ?>>
+<body <?php body_class(); ?>>
 
   <div class="nav center">
 

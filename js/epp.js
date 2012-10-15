@@ -1,37 +1,10 @@
 //---------------------------------
-// Settings
-//
-// Easy Peasy Portfolio uses jQuery-based JavaScript to enhance
-// the user experience. If you don't want to dig into the script
-// you can adjust a few parameters below.
-//---------------------------------
-
-var activate = true;        // Change to false to deactivate all JavaScript animations. Mainly used to compare usability by Linus.
-
-
-//---------------------------------
-// Activating JS
-//
-// Doing it the easy way: if we want to use effects,
-// just remove the .no-js class from the wrapper.
-// This is to make it easier to compare usability with
-// and without effects, and style appropriately.
-//---------------------------------
-
-function eppActivateJS() {
-  if(activate) {
-    jQuery('body').removeClass('no-js').addClass('js');
-  }
-}
-
-
-//---------------------------------
 // Preloader for polaroids
 //---------------------------------
 
 function eppPreloadPolaroids() {
-  jQuery('body.js .archive .polaroid .image:has(img)').prepend('<img class="preloader" src="/wp-content/themes/easypeasyportfolio/img/preloader.gif">');
-  jQuery('body.js .archive .polaroid .image .featured-image').load(function(){
+  jQuery('html.js .archive .polaroid .image:has(img)').prepend('<img class="preloader" src="/wp-content/themes/easypeasyportfolio/img/preloader.gif">');
+  jQuery('html.js .archive .polaroid .image .featured-image').load(function(){
     jQuery(this).parent().find('> .preloader').fadeOut(700, function(){
       jQuery(this).parent().find('> .featured-image').css({ 'opacity': 1 });
       jQuery(this).remove();
@@ -57,7 +30,7 @@ function randomXtoY(minVal, maxVal, floatVal) {
 }
 
 function eppRotatePolaroids() {
-  jQuery('body.js .hentry.archive .polaroid, body.js #presentation .polaroid .image').each(function(){
+  jQuery('html.js .hentry.archive .polaroid, html.js #presentation .polaroid .image').each(function(){
     var degree = randomXtoY(-0.8,0.8)
     jQuery(this).parent().easyRotate({
       'degrees' : degree
@@ -82,7 +55,7 @@ function eppRotatePolaroids() {
 
 function eppGalleryBox() {
   jQuery(window).load(function() {
-    jQuery('body.js .gallery a').colorbox({
+    jQuery('html.js .gallery a').colorbox({
       'initialWidth' : '200',
       'initialHeight' : '200',
       'opacity' : '0.6',
@@ -105,14 +78,14 @@ function eppGalleryBox() {
 //---------------------------------
 
 function eppLabelify() {
-  jQuery('body.js #respond #commentform input[type="text"], body.js #respond #commentform textarea').each(function(){
+  jQuery('html.js #respond #commentform input[type="text"], html.js #respond #commentform textarea').each(function(){
     if (jQuery(this).attr('value') == '') {
       jQuery(this).labelify({
         text: "label"
       });
     }
   });
-  jQuery('body.js #respond #commentform label').remove();
+  jQuery('html.js #respond #commentform label').remove();
 }
 
 
