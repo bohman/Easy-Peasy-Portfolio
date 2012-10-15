@@ -97,7 +97,7 @@ label {
 
 .nav ul {
   position: absolute;
-  bottom: 5px;
+  bottom: 0;
   right: 20px;
 }
 
@@ -114,12 +114,17 @@ label {
 
 .nav #sitename a {
   margin-left: 0;
+  margin-bottom: 0 !important;
   opacity: 0.85;
   font-size: 60px !important;
 }
 
 .nav #sitename a:hover {
   opacity: 1;
+}
+
+.nav #sitename img {
+  vertical-align: top;
 }
 
 

@@ -93,7 +93,6 @@ function eppLabelify() {
 // LET'S ROLL
 //---------------------------------
 jQuery(document).ready(function() {
-  eppActivateJS();
   eppPreloadPolaroids();
   eppRotatePolaroids();
   eppGalleryBox();
