@@ -110,21 +110,42 @@ a.utility-info:hover {
   left: 0;
   right: 0;
   bottom: 0;
+  top: 0;
   margin: 17px;
+  background: rgba(00, 00, 00, 0);
+}
+
+.polaroid .caption .archive-details {
+  display: table-cell;
+  vertical-align: middle;
+  height: 243px;
+  width: 243px;
   opacity: 0;
+  -webkit-transform: scale(0.8);  /* Safari 3.1+, Chrome */
+  -moz-transform: scale(0.8);  /* Firefox 3.5+ */
+  -ms-transform: scale(0.8);  /* IE9+ */
+  -o-transform: scale(0.8);  /* Opera 10.50+ */
+  transform: scale(0.8);
 }
 
-.polaroid:hover .caption {
-  opacity: 0.8;
-}
-
-.polaroid .caption a {
-  display: block;
+.polaroid .caption .title,
+.polaroid .caption .post-date,
+.polaroid .caption .category-names {
   color: #fff;
-  background: #000;
-  padding: 20px;
+  text-align: center;
+  display: block;
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+.polaroid .caption .title {
+  padding: 0 20px 20px;
   font-family: 'Yanone Kaffeesatz', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 30px;
+}
+
+.polaroid .caption .category-names {
+  padding: 5px 20px 0;
 }
 
 .polaroid .image {
@@ -171,4 +192,28 @@ a.utility-info:hover {
   margin-top: -16px;
   left: 50%;
   margin-left: -16px;
+}
+
+.polaroid:hover .caption .archive-details,
+.hentry.archive .polaroid .image img.featured-image,
+.hentry.archive .polaroid .image .pseudo-image {
+  -webkit-transform: scale(1);  /* Safari 3.1+, Chrome */
+  -moz-transform: scale(1);  /* Firefox 3.5+ */
+  -ms-transform: scale(1);  /* IE9+ */
+  -o-transform: scale(1);  /* Opera 10.50+ */
+  transform: scale(1);
+  opacity: 1;
+}
+
+.hentry.archive .polaroid:hover .image img.featured-image,
+.hentry.archive .polaroid:hover .image .pseudo-image {
+  -webkit-transform: scale(0.8);  /* Safari 3.1+, Chrome */
+  -moz-transform: scale(0.8);  /* Firefox 3.5+ */
+  -ms-transform: scale(0.8);  /* IE9+ */
+  -o-transform: scale(0.8);  /* Opera 10.50+ */
+  transform: scale(0.8);
+}
+
+.hentry.archive .polaroid:hover .caption {
+  background: rgba(00, 00, 00, 0.7);
 }

@@ -200,24 +200,44 @@ body.single .hentry:after {
   opacity: 1;
 }
 
-.aside .section.credit {
-  list-style: none;
-  padding: 20px;
-  border: 0;
-  background: #525966;
-  border-radius: 20px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  overflow: hidden;
+.aside .section.metadata {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 5px;
+  position: relative;
+  padding: 10px;
+  background: #000;
+  overflow: visible;
+  height: 14px;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
-.aside .section.credit li {
-  float: left;
-  margin-left: 10px;
+.aside .section.metadata:after {
+  right: 100%;
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: transparent;
+  border-right-color: #000;
+  border-width: 17px;
+  top: 50%;
+  margin-top: -17px;
 }
-.aside .section.credit li:first-child {
-  margin-left: 0;
+
+.aside .section.metadata .label {
+  color: #3E444E;
+  text-transform: lowercase;
 }
+
 
 /* Comments - what it sounds like */
 .comments {

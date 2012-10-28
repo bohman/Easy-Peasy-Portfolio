@@ -94,7 +94,7 @@ function eppLabelify() {
 //---------------------------------
 jQuery(document).ready(function() {
   eppPreloadPolaroids();
-  eppRotatePolaroids();
+  //eppRotatePolaroids();
   eppGalleryBox();
   eppLabelify();
 });

@@ -8,27 +8,20 @@ a {
 }
 
 /* Captions on polaroids */
-.polaroid .caption {
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-
-/* Polaroid image fade in after preload */
-.polaroid .preloader,
-.hentry.archive .polaroid img.featured-image {
+.hentry.archive .polaroid .caption .archive-details,
+.hentry.archive .polaroid .image img.featured-image,
+.hentry.archive .polaroid .image .pseudo-image,
+.hentry.archive .polaroid .caption {
   -moz-transition-property: all;
-  -moz-transition-duration: 0.7s;
+  -moz-transition-duration: 0.2s;
   -moz-transition-delay: 0;
   -webkit-transition-property: all;
-  -webkit-transition-duration: 0.7s;
+  -webkit-transition-duration: 0.2s;
   -webkit-transition-delay: 0;
   -o-transition-property: all;
-  -o-transition-duration: 0.7s;
+  -o-transition-duration: 0.2s;
   -o-transition-delay: 0;
   transition-property: all;
-  transition-duration: 0.7s;
+  transition-duration: 0.2s;
   transition-delay: 0;
 }

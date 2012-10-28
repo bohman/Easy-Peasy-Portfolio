@@ -19,6 +19,7 @@
     <div class="aside">
       <?php
         epp_gallery();
+        epp_metadata();
         epp_extrathings();
       ?>
     </div>

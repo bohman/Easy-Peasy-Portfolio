@@ -134,7 +134,7 @@
     $thumb1link = get_post_meta($post->ID, 'thumb1link', $single = true);
 
     if (has_post_thumbnail()) {
-      if(is_archive()) {
+      if(is_archive() || is_home()) {
         the_post_thumbnail('archive-featured-image', array('class' => 'featured-image'));
       } else {
         the_post_thumbnail('single-post-featured-image', array('class' => 'featured-image'));
@@ -187,6 +187,47 @@
 
 
   //---------------------------------
+  // Easy Peasy archive categories
+  //
+  // Lists the categories without links. For use
+  // on the archive polaroids.
+  //---------------------------------
+
+  function epp_archive_cats() {
+
+    global $post;
+    $categories = get_the_category($post->id);
+    $catnames = '';
+
+    foreach($categories as $category) {
+      $catnames .= $category->cat_name . ', ';
+    }
+
+    $catnames = substr($catnames, 0, -2);
+    echo $catnames;
+  }
+
+
+  //---------------------------------
+  // Easy Peasy Metadata
+  //
+  // Used to publish metadata of a post in the right hand column.
+  //---------------------------------
+
+  function epp_metadata() {
+
+    global $post;
+
+    if(get_post_type() == 'post') { ?>
+      <div class="section metadata">
+        <?php echo '<b class="label">' . __('Published', 'epp') . ':</b> ' . get_the_time('Y-m-d'); ?>
+      </div>
+    <?php }
+
+  }
+
+
+  //---------------------------------
   // Easy Peasy extrathings
   //
   // This is a highly random feature I've not yet decided
@@ -206,13 +247,11 @@
     global $post;
     $extrathings = get_post_meta($post->ID, 'extrathings', $single = true);
 
-    if (($extrathings) || function_exists('the_flattr_permalink') || function_exists('tweetbutton')) {
-      if ($extrathings) { ?>
-        <div class="section wysiwyg">
-          <?php echo $extrathings; ?>
-        </div>
-      <?php }
-    }
+    if ($extrathings) { ?>
+      <div class="section wysiwyg">
+        <?php echo $extrathings; ?>
+      </div>
+    <?php }
   }
 
 
@@ -266,6 +305,9 @@
   //
   // Generates a list of links and things from the contact information
   // entered in EPP options.
+  //
+  // TODO: make it so you can add unlimited number
+  // of options and set your own labels.
   //---------------------------------
 
   function epp_contact_footer() {
