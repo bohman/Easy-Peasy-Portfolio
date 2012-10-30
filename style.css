@@ -3,7 +3,7 @@ Theme Name: Easy Peasy Portfolio
 Theme URI: http://linusbohman.se
 Author URI: http://linusbohman.se
 Description: A great looking portfolio theme that streamlines your backend. Y'know, so you can focus on creating more awesome work rather than tinkering with a bunch of options you don't need.
-Version: 0.87
+Version: 0.88
 Author: Linus Bohman
 
 
@@ -29,9 +29,16 @@ Going for a pretty monochrome thing. The colour scheme is under development. Yay
 
 /* GENERAL THEME STYLING ---------------- */
 body {
-  background: #677079 url('img/noise.png') repeat-x;
   font: 14px/22px georgia, serif;
   color: #16191C;
+  background: rgb(99,107,114);
+  background: -moz-linear-gradient(top,  rgba(99,107,114,1) 0%, rgba(103,112,121,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(99,107,114,1)), color-stop(100%,rgba(103,112,121,1)));
+  background: -webkit-linear-gradient(top,  rgba(99,107,114,1) 0%,rgba(103,112,121,1) 100%);
+  background: -o-linear-gradient(top,  rgba(99,107,114,1) 0%,rgba(103,112,121,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(99,107,114,1) 0%,rgba(103,112,121,1) 100%);
+  background: linear-gradient(to bottom,  rgba(99,107,114,1) 0%,rgba(103,112,121,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#636b72', endColorstr='#677079',GradientType=0 );
 }
 
 a {
@@ -103,13 +110,25 @@ label {
 
 .nav li {
   overflow: hidden;
-  float: left;
+  vertical-align: bottom;
+  display: inline-block;
 }
 
 .nav a {
-  float: left;
-  display: block;
+  vertical-align: bottom;
+  display: inline-block;
   margin-left: 10px;
+  text-align: center;
+}
+
+.nav .menu-description {
+  display: block;
+  font-weight: inherit;
+  font-size: 14px;
+  font-family: georgia, serif;
+  line-height: 1em;
+  letter-spacing: 0 !important;
+  color: #424A57;
 }
 
 .nav #sitename a {
@@ -345,6 +364,8 @@ body.archive .hfeed {
 
 .hentry.archive .polaroid img.featured-image {
   opacity: 0;
+  max-height: 243px;
+  max-width: 243px;
 }
 
 body.no-js .hentry.archive .polaroid img.featured-image,

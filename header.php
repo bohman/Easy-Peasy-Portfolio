@@ -44,6 +44,7 @@
       'theme_location' => 'header-menu',
       'container' => '',
       'fallback_cb' => '',
-      'depth' => '1'
+      'depth' => '1',
+      'walker' => new EPP_Menu_Walker
     )); ?>
   </div>

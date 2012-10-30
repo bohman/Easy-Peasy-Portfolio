@@ -9,9 +9,9 @@
 
     <div class="wysiwyg body">
       <?php if(is_singular()) { ?>
-        <h1 class="header"><?php the_title(); edit_post_link('edit', ' ', ''); ?></h1>
+        <h1 class="header"><?php the_title(); ?></h1>
       <?php } else { ?>
-        <h2 class="header"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><?php edit_post_link('edit', ' ', '')?></h2>
+        <h2 class="header"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
       <?php }
       the_content(); ?>
     </div>

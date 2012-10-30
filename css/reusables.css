@@ -46,7 +46,7 @@ button:active,
   background: rgba(82, 89, 102, 0.7);
   -moz-box-shadow: inset 0px 2px 5px #424C54;
   -webkit-box-shadow: inset 0px 2px 5px #424C54;
-  box-shadow: inset 0px 2px 5px #424C54;
+  box-shadow: inset 0px 2px 1px #424C54;
 }
 
 input[type="submit"]:active,
