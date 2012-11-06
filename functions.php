@@ -134,8 +134,10 @@
     $thumb1link = get_post_meta($post->ID, 'thumb1link', $single = true);
 
     if (has_post_thumbnail()) {
-      if(is_archive() || is_home()) {
+      if(is_archive()) {
         the_post_thumbnail('archive-featured-image', array('class' => 'featured-image'));
+      } else if(is_page_template('template-front.php')) {
+        the_post_thumbnail('single-post-gallery-thumbnail', array('class' => 'featured-image'));
       } else {
         the_post_thumbnail('single-post-featured-image', array('class' => 'featured-image'));
       }
@@ -205,6 +207,50 @@
 
     $catnames = substr($catnames, 0, -2);
     echo $catnames;
+  }
+
+
+  //---------------------------------
+  // Easy Peasy front collage
+  //
+  // A fun, graphical collection of the latest posts.
+  //---------------------------------
+
+  function epp_front_collage() {
+    $collage_query = new WP_Query(array(
+      'posts_per_page' => 25,
+      'post_type' => 'post',
+      'post_status' => 'publish',
+      'orderby' => 'date',
+      'order' => 'desc'
+    )); ?>
+
+    <div class="front-collage">
+      <div class="center">
+        <div class="front-collage-container">
+          <?php while ($collage_query->have_posts()) : $collage_query->the_post(); ?>
+            <div class="image">
+              <?php epp_featured_image(); ?>
+            </div>
+          <?php endwhile;
+          wp_reset_postdata(); ?>
+        </div>
+      </div>
+    </div>
+  <?php }
+
+
+  //---------------------------------
+  // Easy Peasy latest entries
+  //
+  // Retrieves the latest entries and presents them as if they were displayed
+  // on the archive page
+  //---------------------------------
+
+  function epp_latest_entries($amount = 6) {
+    query_posts('posts_per_page='.$amount.'&post_type=post&post_status=publish&orderby=date&order=desc');
+    get_template_part('loop', 'archive');
+    wp_reset_postdata();
   }
 
 

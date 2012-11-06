@@ -3,7 +3,7 @@ Theme Name: Easy Peasy Portfolio
 Theme URI: http://linusbohman.se
 Author URI: http://linusbohman.se
 Description: A great looking portfolio theme that streamlines your backend. Y'know, so you can focus on creating more awesome work rather than tinkering with a bunch of options you don't need.
-Version: 0.88
+Version: 0.89
 Author: Linus Bohman
 
 
@@ -148,11 +148,7 @@ label {
 
 
 /* FULL POST ---------------------- */
-/* In case someone use the full post in list view (like removes home.php)
-   this makes a list of full posts easier to read. */
-
-body.page .hentry:after,
-body.single .hentry:after {
+.hentry:after {
   content: ' ';
 	display: block;
 	clear: both;
@@ -180,7 +176,6 @@ body.single .hentry:after {
 .polaroid + .body {
   margin-top: 40px;
 }
-
 
 /* .aside - secondary content, not the new WP-aside */
 .aside { 
@@ -335,7 +330,7 @@ body.single .hentry:after {
   margin-right: 10px;
 }
 
-body.home .hfeed, /* TODO: generalize so that this is automatically applied to all list views containing thumbs */
+body.page-template-template-front-latest-php .hfeed,
 body.archive .hfeed {
   font-size: 0;
 }
@@ -383,7 +378,71 @@ body.no-js .hentry.archive .polaroid img.featured-image,
 
 
 /* HOME ---------------------- 
-TODO: consider this pretty temporary until you fixed the front page */
+   TODO: consider this pretty temporary until you fixed the front page */
+.front-collage {
+  background: #000;
+  overflow: hidden;
+  -webkit-box-shadow: inset 0px 0px 4px 0px rgba(00, 00, 00, 0.9);
+  box-shadow: inset 0px 0px 4px 0px rgba(00, 00, 00, 0.9);
+  margin-bottom: 40px;
+}
+
+.front-collage .center {
+  margin-top: -117px;
+  margin-bottom: -117px;
+}
+
+.front-collage .front-collage-container {
+  width: 900px;
+  margin-left: -30px;
+  overflow: hidden;
+  border-top: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.front-collage .image {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  float: left;
+  text-align: center;
+}
+
+.front-collage .image:nth-child(5n+1) {
+  clear: left;
+  margin-left: 100px;
+}
+
+.front-collage .image:nth-child(11) {
+  margin-left: 200px;
+}
+
+.front-collage .image:nth-child(16) {
+  margin-left: 300px;
+}
+
+.front-collage .image:nth-child(21) {
+  margin-left: 400px;
+}
+
+.front-collage .image:first-child {
+  margin-left: 0;
+}
+
+.front-collage img {
+/*  max-width: 150px;
+  max-height: 150px;
+  height: auto;
+  width: auto;*/
+  height: 100%;
+  width: 100%;
+}
+
 .push-link {
   overflow: hidden;
   margin-top: 1em !important;
@@ -410,7 +469,7 @@ TODO: consider this pretty temporary until you fixed the front page */
   min-width: inherit;
 }
 
-#presentation .polaroid img {
+#presentation .polaroid .image {
   max-width: 240px;
 }
 
